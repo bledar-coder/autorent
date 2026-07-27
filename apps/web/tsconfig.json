@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./*"],
+      "@autorent/schemas": ["../../packages/schemas/src/index.ts"],
+      "@autorent/tokens": ["../../packages/tokens/src/index.ts"]
+    }
+  },
+  "include": ["lib", "vitest.config.ts"]
+}

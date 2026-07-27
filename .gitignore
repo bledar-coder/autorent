@@ -1,0 +1,21 @@
+node_modules/
+.next/
+dist/
+.turbo/
+out/
+build/
+coverage/
+
+# env
+.env
+.env*.local
+
+# expo
+.expo/
+*.orig.*
+
+# misc
+*.log
+.DS_Store
+.idea/
+.vscode/
