@@ -7,6 +7,9 @@ import { Link } from "@/i18n/navigation";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
+// render on demand (uses search params + the database)
+export const dynamic = "force-dynamic";
+
 const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
 export default async function FleetPage({

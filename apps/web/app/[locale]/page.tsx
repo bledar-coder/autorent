@@ -4,12 +4,15 @@ import { Link } from "@/i18n/navigation";
 import { getFeaturedVehicles } from "@/lib/queries/vehicles";
 import { VehicleCard } from "@/components/vehicle-card";
 
+// render on demand so the build never depends on the database being reachable
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
   const common = await getTranslations("common");
-  const featured = await getFeaturedVehicles(3);
+  const featured = await getFeaturedVehicles(3).catch(() => []);
 
   return (
     <>
