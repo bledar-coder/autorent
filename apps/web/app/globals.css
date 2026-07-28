@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme CSS variables, sourced from @autorent/tokens. Light lives on :root,
+   dark on .dark; <html> ships with .dark so dark is the hero mode. */
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f7f8fa;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e4e7ec;
+  --color-foreground: #0a0b0d;
+  --color-muted: #667085;
+  --color-primary: #2563eb;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #2563eb;
+  --color-destructive: #dc2626;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+}
+
+.dark {
+  --color-background: #0a0b0d;
+  --color-surface: #121316;
+  --color-surface-elevated: #1a1c20;
+  --color-border: #26282e;
+  --color-foreground: #f5f6f7;
+  --color-muted: #8a8f98;
+  --color-primary: #4c82ff;
+  --color-primary-foreground: #0a0b0d;
+  --color-accent: #4c82ff;
+  --color-destructive: #f0616d;
+  --color-success: #3dd68c;
+  --color-warning: #f5b34c;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}

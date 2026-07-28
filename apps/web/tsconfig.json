@@ -3,11 +3,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "types": ["node"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "declaration": false,
+    "allowJs": true,
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./*"],
       "@autorent/schemas": ["../../packages/schemas/src/index.ts"],
-      "@autorent/tokens": ["../../packages/tokens/src/index.ts"]
+      "@autorent/tokens": ["../../packages/tokens/src/index.ts"],
+      "@autorent/i18n": ["../../packages/i18n/src/index.ts"],
+      "@autorent/api-client": ["../../packages/api-client/src/index.ts"]
     }
   },
-  "include": ["lib", "vitest.config.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
