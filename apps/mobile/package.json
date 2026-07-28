@@ -1,0 +1,8 @@
+{
+  "name": "@autorent/mobile",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"AutoRent mobile app is scaffolded in Phase 3 (Expo).\""
+  }
+}

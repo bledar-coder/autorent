@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "fleet": "Fleet",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "account": "Account",
+    "signIn": "Sign in"
+  },
+  "common": {
+    "brand": "AutoRent",
+    "search": "Search",
+    "language": "Language",
+    "menu": "Menu"
+  },
+  "home": {
+    "heroTitle": "Rent a car in Prishtina",
+    "heroSubtitle": "Book online, pay instantly, and pick up the keys at our branch.",
+    "searchCta": "Check availability",
+    "featured": "Featured vehicles",
+    "viewFleet": "View the fleet"
+  },
+  "footer": {
+    "tagline": "The easiest way to rent a car.",
+    "rights": "All rights reserved."
+  }
+}

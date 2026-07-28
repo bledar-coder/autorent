@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Ballina",
+    "fleet": "Flota",
+    "about": "Rreth nesh",
+    "contact": "Kontakt",
+    "faq": "Pyetje",
+    "account": "Llogaria",
+    "signIn": "Kyçu"
+  },
+  "common": {
+    "brand": "AutoRent",
+    "search": "Kërko",
+    "language": "Gjuha",
+    "menu": "Menyja"
+  },
+  "home": {
+    "heroTitle": "Makina me qira në Prishtinë",
+    "heroSubtitle": "Rezervo online, paguaj në çast dhe merr çelësat në degën tonë.",
+    "searchCta": "Kontrollo disponueshmërinë",
+    "featured": "Makina të zgjedhura",
+    "viewFleet": "Shiko flotën"
+  },
+  "footer": {
+    "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
+    "rights": "Të gjitha të drejtat e rezervuara."
+  }
+}
