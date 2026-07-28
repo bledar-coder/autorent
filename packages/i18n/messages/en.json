@@ -61,6 +61,33 @@
     "backToFleet": "Back to the fleet",
     "unavailable": "Currently unavailable"
   },
+  "booking": {
+    "title": "Book {vehicle}",
+    "pickup": "Pick-up date",
+    "return": "Return date",
+    "extras": "Extras",
+    "promo": "Promo code",
+    "promoPlaceholder": "Enter code",
+    "yourDetails": "Your details",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "days": "{days, plural, one {# day} other {# days}}",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "continue": "Continue to payment",
+    "payTitle": "Payment",
+    "pay": "Pay {amount}",
+    "processing": "Processing…",
+    "error": "Something went wrong. Please try again.",
+    "confirmedTitle": "Booking confirmed!",
+    "confirmedText": "Thank you. Your booking is confirmed.",
+    "pendingTitle": "Payment received",
+    "pendingText": "We're confirming your booking — you'll get an email shortly.",
+    "reference": "Reference",
+    "backHome": "Back to home"
+  },
   "footer": {
     "tagline": "The easiest way to rent a car.",
     "rights": "All rights reserved."

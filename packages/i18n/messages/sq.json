@@ -61,6 +61,33 @@
     "backToFleet": "Kthehu te flota",
     "unavailable": "Momentalisht e padisponueshme"
   },
+  "booking": {
+    "title": "Rezervo {vehicle}",
+    "pickup": "Data e marrjes",
+    "return": "Data e kthimit",
+    "extras": "Shtesat",
+    "promo": "Kodi promocional",
+    "promoPlaceholder": "Shkruaj kodin",
+    "yourDetails": "Të dhënat e tua",
+    "name": "Emri i plotë",
+    "email": "Email",
+    "phone": "Telefoni",
+    "days": "{days, plural, one {# ditë} other {# ditë}}",
+    "subtotal": "Nëntotali",
+    "discount": "Zbritja",
+    "total": "Totali",
+    "continue": "Vazhdo te pagesa",
+    "payTitle": "Pagesa",
+    "pay": "Paguaj {amount}",
+    "processing": "Duke procesuar…",
+    "error": "Diçka shkoi keq. Provo përsëri.",
+    "confirmedTitle": "Rezervimi u konfirmua!",
+    "confirmedText": "Faleminderit. Rezervimi yt është konfirmuar.",
+    "pendingTitle": "Pagesa u pranua",
+    "pendingText": "Po e konfirmojmë rezervimin — do të marrësh një email së shpejti.",
+    "reference": "Referenca",
+    "backHome": "Kthehu në ballinë"
+  },
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
     "rights": "Të gjitha të drejtat e rezervuara."

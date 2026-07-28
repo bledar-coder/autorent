@@ -96,3 +96,27 @@ export const rateCardSchema = z.object({
   monthlyRateCents: centsSchema,
 });
 export type RateCard = z.infer<typeof rateCardSchema>;
+
+// ---- booking input ---------------------------------------------------------
+
+export const bookingCustomerSchema = z.object({
+  name: z.string().trim().min(2, "Please enter your full name"),
+  email: z.string().trim().email("Enter a valid email"),
+  phone: z.string().trim().min(6, "Enter a valid phone number"),
+});
+export type BookingCustomer = z.infer<typeof bookingCustomerSchema>;
+
+export const bookingCreateSchema = z
+  .object({
+    vehicleSlug: z.string().min(1),
+    startAt: z.string().datetime({ offset: true }),
+    endAt: z.string().datetime({ offset: true }),
+    extraIds: z.array(z.string()).default([]),
+    promoCode: z.string().trim().optional(),
+    customer: bookingCustomerSchema,
+  })
+  .refine((v) => new Date(v.endAt) > new Date(v.startAt), {
+    message: "Return must be after pick-up",
+    path: ["endAt"],
+  });
+export type BookingCreateInput = z.infer<typeof bookingCreateSchema>;
