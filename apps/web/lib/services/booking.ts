@@ -129,15 +129,22 @@ export async function createBooking(
   });
 
   // create the payment intent outside the DB transaction; idempotent per booking
-  const intent = await getStripe().paymentIntents.create(
-    {
-      amount: booking.totalCents,
-      currency: "eur",
-      metadata: { bookingId: booking.id, reference: booking.reference },
-      automatic_payment_methods: { enabled: true },
-    },
-    { idempotencyKey: `booking_${booking.id}` },
-  );
+  let intent;
+  try {
+    intent = await getStripe().paymentIntents.create(
+      {
+        amount: booking.totalCents,
+        currency: "eur",
+        metadata: { bookingId: booking.id, reference: booking.reference },
+        automatic_payment_methods: { enabled: true },
+      },
+      { idempotencyKey: `booking_${booking.id}` },
+    );
+  } catch (error) {
+    // payment init failed — release the hold so it doesn't block the dates
+    await prisma.booking.delete({ where: { id: booking.id } }).catch(() => {});
+    throw error;
+  }
 
   await prisma.booking.update({
     where: { id: booking.id },
