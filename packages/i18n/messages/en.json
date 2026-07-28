@@ -12,14 +12,54 @@
     "brand": "AutoRent",
     "search": "Search",
     "language": "Language",
-    "menu": "Menu"
+    "menu": "Menu",
+    "all": "All",
+    "apply": "Apply",
+    "clear": "Clear",
+    "perDay": "/ day",
+    "from": "From",
+    "loading": "Loading…"
   },
   "home": {
     "heroTitle": "Rent a car in Prishtina",
     "heroSubtitle": "Book online, pay instantly, and pick up the keys at our branch.",
     "searchCta": "Check availability",
     "featured": "Featured vehicles",
-    "viewFleet": "View the fleet"
+    "viewFleet": "View the fleet",
+    "viewAll": "View all cars"
+  },
+  "fleet": {
+    "title": "Our fleet",
+    "subtitle": "Choose your car and check availability for your dates.",
+    "resultsOne": "{count} car",
+    "resultsOther": "{count} cars",
+    "empty": "No cars match your filters.",
+    "emptyAction": "Clear filters",
+    "class": "Class",
+    "transmission": "Transmission",
+    "seats": "Seats",
+    "maxPrice": "Max price / day",
+    "pickup": "Pick-up",
+    "return": "Return",
+    "any": "Any"
+  },
+  "vehicle": {
+    "perDay": "/ day",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "bookNow": "Book now",
+    "seats": "Seats",
+    "doors": "Doors",
+    "transmission": "Transmission",
+    "fuel": "Fuel",
+    "year": "Year",
+    "deposit": "Deposit",
+    "features": "Features",
+    "specs": "Specifications",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet.",
+    "backToFleet": "Back to the fleet",
+    "unavailable": "Currently unavailable"
   },
   "footer": {
     "tagline": "The easiest way to rent a car.",

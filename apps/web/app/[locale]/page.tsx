@@ -1,11 +1,15 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight, Search } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { getFeaturedVehicles } from "@/lib/queries/vehicles";
+import { VehicleCard } from "@/components/vehicle-card";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const common = await getTranslations("common");
+  const featured = await getFeaturedVehicles(3);
 
   return (
     <>
@@ -45,20 +49,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Featured placeholder */}
+      {/* Featured vehicles */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="mb-6 text-2xl font-semibold">{t("featured")}</h2>
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">{t("featured")}</h2>
+          <Link href="/fleet" className="text-sm text-primary hover:underline">
+            {t("viewAll")}
+          </Link>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border bg-surface p-5"
-              aria-hidden="true"
-            >
-              <div className="mb-4 aspect-video rounded-lg bg-surface-elevated" />
-              <div className="mb-2 h-4 w-2/3 rounded bg-surface-elevated" />
-              <div className="h-4 w-1/3 rounded bg-surface-elevated" />
-            </div>
+          {featured.map((vehicle) => (
+            <VehicleCard
+              key={vehicle.id}
+              vehicle={vehicle}
+              locale={locale}
+              perDayLabel={common("perDay")}
+            />
           ))}
         </div>
       </section>

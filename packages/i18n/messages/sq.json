@@ -12,14 +12,54 @@
     "brand": "AutoRent",
     "search": "Kërko",
     "language": "Gjuha",
-    "menu": "Menyja"
+    "menu": "Menyja",
+    "all": "Të gjitha",
+    "apply": "Apliko",
+    "clear": "Pastro",
+    "perDay": "/ ditë",
+    "from": "Nga",
+    "loading": "Duke u ngarkuar…"
   },
   "home": {
     "heroTitle": "Makina me qira në Prishtinë",
     "heroSubtitle": "Rezervo online, paguaj në çast dhe merr çelësat në degën tonë.",
     "searchCta": "Kontrollo disponueshmërinë",
     "featured": "Makina të zgjedhura",
-    "viewFleet": "Shiko flotën"
+    "viewFleet": "Shiko flotën",
+    "viewAll": "Shiko të gjitha makinat"
+  },
+  "fleet": {
+    "title": "Flota jonë",
+    "subtitle": "Zgjidh makinën dhe kontrollo disponueshmërinë për datat e tua.",
+    "resultsOne": "{count} makinë",
+    "resultsOther": "{count} makina",
+    "empty": "Asnjë makinë nuk përputhet me filtrat.",
+    "emptyAction": "Pastro filtrat",
+    "class": "Klasa",
+    "transmission": "Transmisioni",
+    "seats": "Ulëse",
+    "maxPrice": "Çmimi maks / ditë",
+    "pickup": "Marrja",
+    "return": "Kthimi",
+    "any": "Të gjitha"
+  },
+  "vehicle": {
+    "perDay": "/ ditë",
+    "weekly": "Javore",
+    "monthly": "Mujore",
+    "bookNow": "Rezervo tani",
+    "seats": "Ulëse",
+    "doors": "Dyer",
+    "transmission": "Transmisioni",
+    "fuel": "Karburanti",
+    "year": "Viti",
+    "deposit": "Depozita",
+    "features": "Veçoritë",
+    "specs": "Specifikimet",
+    "reviews": "Vlerësime",
+    "noReviews": "Ende s'ka vlerësime.",
+    "backToFleet": "Kthehu te flota",
+    "unavailable": "Momentalisht e padisponueshme"
   },
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
