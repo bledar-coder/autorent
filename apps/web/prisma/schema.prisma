@@ -1,0 +1,320 @@
+// AutoRent data model (PostgreSQL). Availability is never stored as a flag — it
+// is derived from bookings + maintenance blocks. Money is integer euro cents.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---- enums ----------------------------------------------------------------
+
+enum Role {
+  customer
+  admin
+}
+
+enum VehicleClass {
+  economy
+  compact
+  sedan
+  suv
+  luxury
+  van
+}
+
+enum Transmission {
+  manual
+  automatic
+}
+
+enum FuelType {
+  petrol
+  diesel
+  hybrid
+  electric
+}
+
+enum VehicleStatus {
+  active
+  retired
+}
+
+enum VehicleDocumentType {
+  registration
+  insurance
+  service
+}
+
+enum BookingStatus {
+  pending_payment
+  confirmed
+  active
+  completed
+  cancelled
+}
+
+enum BookingSource {
+  online
+  manual
+}
+
+enum PaymentStatus {
+  unpaid
+  paid_offline
+  paid
+  refunded
+  partially_refunded
+}
+
+enum RefundStatus {
+  none
+  pending
+  partial
+  full
+  failed
+}
+
+enum ExtraPriceType {
+  per_day
+  flat
+}
+
+enum PromoKind {
+  percentage
+  fixed
+}
+
+enum ConditionReportKind {
+  checkout
+  checkin
+}
+
+enum ReviewStatus {
+  pending
+  approved
+  rejected
+}
+
+// ---- auth (Better Auth) ----------------------------------------------------
+
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  emailVerified Boolean  @default(false)
+  image         String?
+  role          Role     @default(customer)
+  phone         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  sessions         Session[]
+  accounts         Account[]
+  bookings         Booking[]
+  reviews          Review[]
+  conditionReports ConditionReport[] @relation("StaffReports")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// ---- domain ----------------------------------------------------------------
+
+model Vehicle {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  name             String
+  make             String
+  model            String
+  year             Int
+  class            VehicleClass
+  transmission     Transmission
+  fuelType         FuelType
+  seats            Int
+  doors            Int
+  dailyRateCents   Int
+  weeklyRateCents  Int
+  monthlyRateCents Int
+  depositCents     Int           @default(0)
+  description      String?
+  features         String[]
+  photos           String[]
+  status           VehicleStatus @default(active)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  documents         VehicleDocument[]
+  bookings          Booking[]
+  maintenanceBlocks MaintenanceBlock[]
+  reviews           Review[]
+}
+
+model VehicleDocument {
+  id             String              @id @default(cuid())
+  vehicleId      String
+  vehicle        Vehicle             @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  type           VehicleDocumentType
+  documentNumber String?
+  expiresAt      DateTime
+  notes          String?
+  createdAt      DateTime            @default(now())
+
+  @@index([expiresAt])
+}
+
+model Extra {
+  id         String         @id @default(cuid())
+  name       String
+  nameSq     String?
+  priceCents Int
+  priceType  ExtraPriceType
+  active     Boolean        @default(true)
+  createdAt  DateTime       @default(now())
+}
+
+model PromoCode {
+  id         String    @id @default(cuid())
+  code       String    @unique
+  kind       PromoKind
+  amount     Int
+  validFrom  DateTime
+  validUntil DateTime
+  usageLimit Int?
+  usedCount  Int       @default(0)
+  active     Boolean   @default(true)
+  createdAt  DateTime  @default(now())
+
+  bookings Booking[]
+}
+
+model Booking {
+  id                    String        @id @default(cuid())
+  reference             String        @unique
+  vehicleId             String
+  vehicle               Vehicle       @relation(fields: [vehicleId], references: [id])
+  userId                String?
+  user                  User?         @relation(fields: [userId], references: [id])
+  customerName          String
+  customerEmail         String
+  customerPhone         String
+  startAt               DateTime
+  endAt                 DateTime
+  status                BookingStatus @default(pending_payment)
+  source                BookingSource @default(online)
+  paymentStatus         PaymentStatus @default(unpaid)
+  currency              String        @default("EUR")
+  baseCents             Int
+  extrasCents           Int           @default(0)
+  discountCents         Int           @default(0)
+  totalCents            Int
+  extras                Json?
+  promoCodeId           String?
+  promoCode             PromoCode?    @relation(fields: [promoCodeId], references: [id])
+  stripePaymentIntentId String?
+  holdExpiresAt         DateTime?
+  refundStatus          RefundStatus  @default(none)
+  refundCents           Int           @default(0)
+  driverLicenseFileKey  String?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  extensions       BookingExtension[]
+  conditionReports ConditionReport[]
+  review           Review?
+
+  @@index([vehicleId, startAt, endAt])
+  @@index([status])
+}
+
+model BookingExtension {
+  id                    String        @id @default(cuid())
+  bookingId             String
+  booking               Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  addedDays             Int
+  newEndAt              DateTime
+  priceCents            Int
+  paymentStatus         PaymentStatus @default(unpaid)
+  stripePaymentIntentId String?
+  createdAt             DateTime      @default(now())
+}
+
+model ConditionReport {
+  id              String              @id @default(cuid())
+  bookingId       String
+  booking         Booking             @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  kind            ConditionReportKind
+  fuelLevel       Int
+  odometer        Int
+  photoKeys       String[]
+  damageNotes     String?
+  signatureKey    String?
+  licenseVerified Boolean             @default(false)
+  staffUserId     String?
+  staff           User?               @relation("StaffReports", fields: [staffUserId], references: [id])
+  createdAt       DateTime            @default(now())
+}
+
+model MaintenanceBlock {
+  id        String   @id @default(cuid())
+  vehicleId String
+  vehicle   Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  startAt   DateTime
+  endAt     DateTime
+  reason    String?
+  createdAt DateTime @default(now())
+
+  @@index([vehicleId, startAt, endAt])
+}
+
+model Review {
+  id        String       @id @default(cuid())
+  bookingId String       @unique
+  booking   Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  vehicleId String
+  vehicle   Vehicle      @relation(fields: [vehicleId], references: [id])
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  rating    Int
+  comment   String?
+  status    ReviewStatus @default(pending)
+  createdAt DateTime     @default(now())
+}
