@@ -1,11 +1,9 @@
 import { getTranslations } from "next-intl/server";
-import { Bell } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { getSessionUser } from "@/lib/auth-helpers";
-import { prisma } from "@/lib/db";
 import { SportsCarMark } from "./sports-car-mark";
 import { LanguageSwitcher } from "./language-switcher";
 import { AuthMenu } from "./auth-menu";
+import { NotificationBell } from "./notification-bell";
 
 const NAV = [
   { href: "/", key: "home" },
@@ -17,10 +15,6 @@ const NAV = [
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
-  const user = await getSessionUser();
-  const unread = user
-    ? await prisma.notification.count({ where: { userId: user.id, read: false } }).catch(() => 0)
-    : 0;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
@@ -48,20 +42,7 @@ export async function SiteHeader() {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          {user ? (
-            <Link
-              href="/notifications"
-              aria-label="Notifications"
-              className="relative text-muted transition-colors hover:text-foreground"
-            >
-              <Bell className="h-5 w-5" />
-              {unread > 0 ? (
-                <span className="absolute -right-1.5 -top-1.5 grid h-4 min-w-[16px] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
-                  {unread > 9 ? "9+" : unread}
-                </span>
-              ) : null}
-            </Link>
-          ) : null}
+          <NotificationBell />
           <AuthMenu />
         </div>
       </div>
