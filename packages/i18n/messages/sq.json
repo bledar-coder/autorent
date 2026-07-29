@@ -61,6 +61,35 @@
     "backToFleet": "Kthehu te flota",
     "unavailable": "Momentalisht e padisponueshme"
   },
+  "auth": {
+    "signIn": "Kyçu",
+    "signUp": "Krijo llogari",
+    "email": "Email",
+    "password": "Fjalëkalimi",
+    "name": "Emri i plotë",
+    "google": "Vazhdo me Google",
+    "noAccount": "I ri këtu?",
+    "haveAccount": "Ke tashmë një llogari?",
+    "signInSubtitle": "Kyçu për të menaxhuar rezervimet.",
+    "signUpSubtitle": "Rezervo më shpejt dhe ndiq qiratë e tua.",
+    "signOut": "Dil",
+    "error": "Kontrollo të dhënat dhe provo përsëri.",
+    "or": "ose"
+  },
+  "account": {
+    "title": "Rezervimet e mia",
+    "empty": "Ende s'ke rezervime.",
+    "browse": "Shfleto flotën",
+    "cancel": "Anulo rezervimin",
+    "cancelConfirm": "Anulo këtë rezervim?",
+    "total": "Totali",
+    "refunded": "U rimbursua {amount}",
+    "statusPending": "Në pritje të pagesës",
+    "statusConfirmed": "Konfirmuar",
+    "statusActive": "Aktive",
+    "statusCompleted": "Përfunduar",
+    "statusCancelled": "Anuluar"
+  },
   "booking": {
     "title": "Rezervo {vehicle}",
     "pickup": "Data e marrjes",

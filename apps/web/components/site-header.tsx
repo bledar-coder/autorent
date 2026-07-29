@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Car } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
+import { AuthMenu } from "./auth-menu";
 
 const NAV = [
   { href: "/", key: "home" },
@@ -38,12 +39,7 @@ export async function SiteHeader() {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Link
-            href="/account"
-            className="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            {t("signIn")}
-          </Link>
+          <AuthMenu />
         </div>
       </div>
     </header>

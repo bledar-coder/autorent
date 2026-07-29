@@ -61,6 +61,35 @@
     "backToFleet": "Back to the fleet",
     "unavailable": "Currently unavailable"
   },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full name",
+    "google": "Continue with Google",
+    "noAccount": "New here?",
+    "haveAccount": "Already have an account?",
+    "signInSubtitle": "Sign in to manage your bookings.",
+    "signUpSubtitle": "Book faster and keep track of your rentals.",
+    "signOut": "Sign out",
+    "error": "Check your details and try again.",
+    "or": "or"
+  },
+  "account": {
+    "title": "My bookings",
+    "empty": "You have no bookings yet.",
+    "browse": "Browse the fleet",
+    "cancel": "Cancel booking",
+    "cancelConfirm": "Cancel this booking?",
+    "total": "Total",
+    "refunded": "Refunded {amount}",
+    "statusPending": "Pending payment",
+    "statusConfirmed": "Confirmed",
+    "statusActive": "Active",
+    "statusCompleted": "Completed",
+    "statusCancelled": "Cancelled"
+  },
   "booking": {
     "title": "Book {vehicle}",
     "pickup": "Pick-up date",
