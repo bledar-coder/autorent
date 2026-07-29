@@ -23,6 +23,24 @@ type SeedVehicle = {
 
 const FEATURES = ["Air conditioning", "Bluetooth", "USB", "Cruise control"];
 
+const px = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
+
+const PHOTOS: Record<string, string[]> = {
+  "vw-golf-8": [px(170811), px(116675)],
+  "skoda-octavia": [px(210019), px(337909)],
+  "audi-a4": [px(100656), px(244206)],
+  "bmw-320i": [px(120049), px(164654)],
+  "mercedes-c-class": [px(193021), px(358070)],
+  "vw-passat": [px(1035108), px(3729464)],
+  "toyota-corolla": [px(3802510), px(2365572)],
+  "dacia-duster": [px(112460), px(170811)],
+  "vw-tiguan": [px(116675), px(210019)],
+  "ford-transit": [px(337909), px(100656)],
+  "renault-clio": [px(244206), px(120049)],
+  "tesla-model-3": [px(164654), px(193021)],
+};
+
 const VEHICLES: SeedVehicle[] = [
   { slug: "vw-golf-8", name: "Volkswagen Golf 8", make: "Volkswagen", model: "Golf", year: 2022, class: "compact", transmission: "manual", fuelType: "diesel", seats: 5, doors: 5, dailyRateCents: 3000, depositCents: 15000, features: FEATURES },
   { slug: "skoda-octavia", name: "Škoda Octavia", make: "Škoda", model: "Octavia", year: 2023, class: "sedan", transmission: "automatic", fuelType: "diesel", seats: 5, doors: 4, dailyRateCents: 4000, depositCents: 20000, features: [...FEATURES, "Parking sensors"] },
@@ -74,7 +92,7 @@ async function main() {
         weeklyRateCents: v.dailyRateCents * 6,
         monthlyRateCents: v.dailyRateCents * 24,
         description: `${v.name} — ${v.transmission}, ${v.fuelType}, ${v.seats} seats.`,
-        photos: [`/vehicles/${v.slug}-1.jpg`, `/vehicles/${v.slug}-2.jpg`],
+        photos: PHOTOS[v.slug] ?? [],
         documents: {
           create: [
             { type: "registration", expiresAt: daysFromNow(220 + i) },

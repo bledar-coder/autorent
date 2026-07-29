@@ -41,6 +41,10 @@ function readVehicleFields(formData: FormData) {
       .split(",")
       .map((f) => f.trim())
       .filter(Boolean),
+    photos: String(formData.get("photos") ?? "")
+      .split(/\r?\n/)
+      .map((p) => p.trim())
+      .filter(Boolean),
     status: String(formData.get("status")) as VehicleStatus,
   };
 }
@@ -55,7 +59,7 @@ export async function createVehicle(formData: FormData) {
     slug = `${slug}-${Math.random().toString(36).slice(2, 6)}`;
   }
 
-  await prisma.vehicle.create({ data: { ...fields, slug, photos: [] } });
+  await prisma.vehicle.create({ data: { ...fields, slug } });
   redirect(`/${locale}/admin/vehicles`);
 }
 

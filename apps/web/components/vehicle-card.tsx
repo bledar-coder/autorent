@@ -2,6 +2,7 @@ import type { Vehicle } from "@prisma/client";
 import { Users, Gauge, Fuel } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { formatPrice, formatVehicleClass, titleCase } from "@/lib/format";
+import { VehiclePhoto } from "./vehicle-photo";
 
 export function VehicleCard({
   vehicle,
@@ -17,9 +18,13 @@ export function VehicleCard({
       href={`/fleet/${vehicle.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-transform duration-200 hover:-translate-y-1 hover:border-primary"
     >
-      <div className="flex aspect-video items-center justify-center bg-surface-elevated text-muted">
-        <span className="text-sm">{formatVehicleClass(vehicle.class)}</span>
-      </div>
+      <VehiclePhoto
+        src={vehicle.photos[0]}
+        alt={vehicle.name}
+        vehicleClass={vehicle.class}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+        className="aspect-video transition-transform duration-200 group-hover:scale-[1.03]"
+      />
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
           <h3 className="font-semibold text-foreground">{vehicle.name}</h3>

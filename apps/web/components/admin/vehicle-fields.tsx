@@ -112,6 +112,17 @@ export function VehicleFields({ vehicle }: { vehicle?: Vehicle }) {
       </label>
 
       <label className="block text-sm">
+        <span className="mb-1 block text-muted">Photos (one image URL per line)</span>
+        <textarea
+          name="photos"
+          rows={3}
+          defaultValue={vehicle?.photos.join("\n")}
+          placeholder="https://…/car.jpg"
+          className={field}
+        />
+      </label>
+
+      <label className="block text-sm">
         <span className="mb-1 block text-muted">Status</span>
         <select name="status" defaultValue={vehicle?.status ?? "active"} className={`${field} capitalize`}>
           <option value="active">active</option>
