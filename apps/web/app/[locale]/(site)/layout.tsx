@@ -2,7 +2,12 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-export default function SiteLayout({ children }: { children: ReactNode }) {
+export default function SiteLayout({
+  children,
+}: {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
