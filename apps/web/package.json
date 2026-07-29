@@ -16,7 +16,6 @@
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
-    "@autorent/api-client": "workspace:*",
     "@autorent/i18n": "workspace:*",
     "@autorent/schemas": "workspace:*",
     "@autorent/tokens": "workspace:*",

@@ -5,12 +5,7 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  transpilePackages: [
-    "@autorent/tokens",
-    "@autorent/schemas",
-    "@autorent/i18n",
-    "@autorent/api-client",
-  ],
+  transpilePackages: ["@autorent/tokens", "@autorent/schemas", "@autorent/i18n"],
 };
 
 export default withNextIntl(nextConfig);

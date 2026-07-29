@@ -13,8 +13,7 @@
       "@/*": ["./*"],
       "@autorent/schemas": ["../../packages/schemas/src/index.ts"],
       "@autorent/tokens": ["../../packages/tokens/src/index.ts"],
-      "@autorent/i18n": ["../../packages/i18n/src/index.ts"],
-      "@autorent/api-client": ["../../packages/api-client/src/index.ts"]
+      "@autorent/i18n": ["../../packages/i18n/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
