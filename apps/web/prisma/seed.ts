@@ -23,22 +23,56 @@ type SeedVehicle = {
 
 const FEATURES = ["Air conditioning", "Bluetooth", "USB", "Cruise control"];
 
-const px = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
-
+// Real model-matching photos from Wikimedia Commons (stable upload.wikimedia.org URLs).
 const PHOTOS: Record<string, string[]> = {
-  "vw-golf-8": [px(170811), px(116675)],
-  "skoda-octavia": [px(210019), px(337909)],
-  "audi-a4": [px(100656), px(244206)],
-  "bmw-320i": [px(120049), px(164654)],
-  "mercedes-c-class": [px(193021), px(358070)],
-  "vw-passat": [px(1035108), px(3729464)],
-  "toyota-corolla": [px(3802510), px(2365572)],
-  "dacia-duster": [px(112460), px(170811)],
-  "vw-tiguan": [px(116675), px(210019)],
-  "ford-transit": [px(337909), px(100656)],
-  "renault-clio": [px(244206), px(120049)],
-  "tesla-model-3": [px(164654), px(193021)],
+  "vw-golf-8": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/2020_Volkswagen_Golf_Style_1.5_Front.jpg/1280px-2020_Volkswagen_Golf_Style_1.5_Front.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/VOLKSWAGEN_GOLF_%28Mk8_CD1%29_China_%282%29.jpg/1280px-VOLKSWAGEN_GOLF_%28Mk8_CD1%29_China_%282%29.jpg",
+  ],
+  "skoda-octavia": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/%C5%A0koda_Octavia_IV_Scout_IMG_7906.jpg/1280px-%C5%A0koda_Octavia_IV_Scout_IMG_7906.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/%C5%A0koda_Octavia_IV_Scout_IMG_7906a.jpg/1280px-%C5%A0koda_Octavia_IV_Scout_IMG_7906a.jpg",
+  ],
+  "audi-a4": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Audi_A4_B9_sedans_%28FL%29_1X7A6817.jpg/1280px-Audi_A4_B9_sedans_%28FL%29_1X7A6817.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Audi_A4_B9_sedans_%28FL%29_1X7A6816.jpg/1280px-Audi_A4_B9_sedans_%28FL%29_1X7A6816.jpg",
+  ],
+  "bmw-320i": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/BMW_3_SERIES_SEDAN_%28G20%29_China.jpg/1280px-BMW_3_SERIES_SEDAN_%28G20%29_China.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/BMW_3_SERIES_SEDAN_%28G20%29_China_%282%29.jpg/1280px-BMW_3_SERIES_SEDAN_%28G20%29_China_%282%29.jpg",
+  ],
+  "mercedes-c-class": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mercedes-AMG_C_63_%28W206%29_IMG_0310.jpg/1280px-Mercedes-AMG_C_63_%28W206%29_IMG_0310.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mercedes-AMG_C_63_%28W206%29_IMG_0305.jpg/1280px-Mercedes-AMG_C_63_%28W206%29_IMG_0305.jpg",
+  ],
+  "vw-passat": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Volkswagen_Passat_B8_%282019%29_IMG_1992.jpg/1280px-Volkswagen_Passat_B8_%282019%29_IMG_1992.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Volkswagen_Passat_Variant_R-Line%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0201%29.jpg/1280px-Volkswagen_Passat_Variant_R-Line%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0201%29.jpg",
+  ],
+  "toyota-corolla": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/2023_Toyota_Corolla_Touring_Sports_Hybrid_%28E210%29_IMG_7679.jpg/1280px-2023_Toyota_Corolla_Touring_Sports_Hybrid_%28E210%29_IMG_7679.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/2023_Toyota_Corolla_Hybrid_%28E210%29_hatchback_IMG_9877.jpg/1280px-2023_Toyota_Corolla_Hybrid_%28E210%29_hatchback_IMG_9877.jpg",
+  ],
+  "dacia-duster": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Dacia_Duster_II_Facelift_IAA_2021_1X7A0132.jpg/1280px-Dacia_Duster_II_Facelift_IAA_2021_1X7A0132.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Dacia_Duster%2C_GIMS_2024%2C_Le_Grand-Saconnex_%28GIMS0126%29.jpg/1280px-Dacia_Duster%2C_GIMS_2024%2C_Le_Grand-Saconnex_%28GIMS0126%29.jpg",
+  ],
+  "vw-tiguan": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Volkswagen_Tiguan_II_R-Line_China_2019-03-20.jpg/1280px-Volkswagen_Tiguan_II_R-Line_China_2019-03-20.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/2024_Volkswagen_Tiguan_4Motion_SE_R-Line_Black%2C_rear_left.jpg/1280px-2024_Volkswagen_Tiguan_4Motion_SE_R-Line_Black%2C_rear_left.jpg",
+  ],
+  "ford-transit": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ford_Transit_Custom_%282023%29_1X7A1605.jpg/1280px-Ford_Transit_Custom_%282023%29_1X7A1605.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ford_Transit_Custom_%282023%29_1X7A1608.jpg/1280px-Ford_Transit_Custom_%282023%29_1X7A1608.jpg",
+  ],
+  "renault-clio": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Renault_Clio_V_1X7A0392.jpg/1280px-Renault_Clio_V_1X7A0392.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Renault_Clio_V_%282023%29_1X7A1577.jpg/1280px-Renault_Clio_V_%282023%29_1X7A1577.jpg",
+  ],
+  "tesla-model-3": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Tesla_Model_3%2C_EMS_2024%2C_Essen_%28P1032260%29.jpg/1280px-Tesla_Model_3%2C_EMS_2024%2C_Essen_%28P1032260%29.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Tesla_Model_3_%282023%29_Autofr%C3%BChling_Ulm_IMG_9282.jpg/1280px-Tesla_Model_3_%282023%29_Autofr%C3%BChling_Ulm_IMG_9282.jpg",
+  ],
 };
 
 const VEHICLES: SeedVehicle[] = [

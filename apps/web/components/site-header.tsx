@@ -18,11 +18,13 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-semibold text-foreground">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-primary text-primary-foreground">
-            <Car className="h-5 w-5" />
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-[#8AB0FF] text-primary-foreground shadow-lg shadow-primary/25 ring-1 ring-white/10 transition-transform duration-200 group-hover:scale-105">
+            <Car className="h-5 w-5" strokeWidth={2.5} />
           </span>
-          AutoRent
+          <span className="text-lg font-bold tracking-tight text-foreground">
+            Auto<span className="text-primary">Rent</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
