@@ -99,6 +99,13 @@ enum ReviewStatus {
   rejected
 }
 
+enum NotificationType {
+  booking_confirmed
+  booking_cancelled
+  booking_completed
+  review_invite
+}
+
 // ---- auth (Better Auth) ----------------------------------------------------
 
 model User {
@@ -117,6 +124,7 @@ model User {
   bookings         Booking[]
   reviews          Review[]
   conditionReports ConditionReport[] @relation("StaffReports")
+  notifications    Notification[]
 }
 
 model Session {
@@ -317,4 +325,19 @@ model Review {
   comment   String?
   status    ReviewStatus @default(pending)
   createdAt DateTime     @default(now())
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String?
+  user      User?            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email     String?
+  type      NotificationType
+  data      Json?
+  read      Boolean          @default(false)
+  bookingId String?
+  createdAt DateTime         @default(now())
+
+  @@index([userId, read])
+  @@index([email])
 }

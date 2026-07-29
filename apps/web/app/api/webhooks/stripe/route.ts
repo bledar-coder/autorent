@@ -3,6 +3,7 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { prisma } from "@/lib/db";
 import { canTransition } from "@/lib/booking-state";
+import { notifyBooking } from "@/lib/notifications";
 
 // Bookings are confirmed by Stripe webhook only, never by the client.
 export async function POST(request: Request) {
@@ -24,13 +25,17 @@ export async function POST(request: Request) {
     const intent = event.data.object as Stripe.PaymentIntent;
     const bookingId = intent.metadata?.bookingId;
     if (bookingId) {
-      const booking = await prisma.booking.findUnique({ where: { id: bookingId } });
+      const booking = await prisma.booking.findUnique({
+        where: { id: bookingId },
+        include: { vehicle: { select: { name: true } } },
+      });
       // idempotent: only advance a still-pending booking
       if (booking && canTransition(booking.status, "confirmed")) {
         await prisma.booking.update({
           where: { id: bookingId },
           data: { status: "confirmed", paymentStatus: "paid", holdExpiresAt: null },
         });
+        await notifyBooking("booking_confirmed", booking);
       }
     }
   } else if (event.type === "payment_intent.payment_failed") {

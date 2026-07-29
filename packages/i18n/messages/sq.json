@@ -112,6 +112,30 @@
     "reviewThanks": "Faleminderit! Vlerësimi juaj është në pritje të aprovimit.",
     "reviewed": "Vlerësimi u dërgua"
   },
+  "notifications": {
+    "title": "Njoftimet",
+    "empty": "Ende asnjë njoftim.",
+    "markAllRead": "Shëno të gjitha si të lexuara",
+    "leaveReview": "Lër një vlerësim",
+    "types": {
+      "booking_confirmed": {
+        "title": "Rezervimi u konfirmua",
+        "body": "Rezervimi juaj {reference} për {vehicle} është konfirmuar. Shihemi së shpejti!"
+      },
+      "booking_cancelled": {
+        "title": "Rezervimi u anulua",
+        "body": "Rezervimi juaj {reference} për {vehicle} është anuluar."
+      },
+      "booking_completed": {
+        "title": "Qiraja përfundoi",
+        "body": "Faleminderit që morët me qira {vehicle} — rezervimi {reference}."
+      },
+      "review_invite": {
+        "title": "Si ishte qiraja?",
+        "body": "Qiraja juaj për {vehicle} përfundoi. Do të donim një vlerësim për rezervimin {reference}."
+      }
+    }
+  },
   "booking": {
     "title": "Rezervo {vehicle}",
     "pickup": "Data e marrjes",

@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db";
 import { getStripe } from "@/lib/stripe";
 import { canTransition } from "@/lib/booking-state";
 import { computeRefund } from "@/lib/refund";
+import { notifyBooking } from "@/lib/notifications";
 
 export async function POST(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -14,7 +15,10 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
     return NextResponse.json({ error: { code: "unauthorized", message: "Sign in required" } }, { status: 401 });
   }
 
-  const booking = await prisma.booking.findUnique({ where: { id } });
+  const booking = await prisma.booking.findUnique({
+    where: { id },
+    include: { vehicle: { select: { name: true } } },
+  });
   if (!booking) {
     return NextResponse.json({ error: { code: "not_found", message: "Booking not found" } }, { status: 404 });
   }
@@ -58,6 +62,8 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
     where: { id },
     data: { status: "cancelled", refundStatus, refundCents: refund.refundCents, paymentStatus, holdExpiresAt: null },
   });
+
+  await notifyBooking("booking_cancelled", booking, { refundCents: refund.refundCents });
 
   return NextResponse.json({ ok: true, refundCents: refund.refundCents, refundStatus });
 }

@@ -10,6 +10,7 @@ import { computeRefund } from "@/lib/refund";
 import { quote, quoteExtensionCents } from "@/lib/pricing";
 import { rentalDays } from "@/lib/dates";
 import { isVehicleAvailable, type BookingLike, type DateRange } from "@/lib/availability";
+import { notifyBooking } from "@/lib/notifications";
 
 const HOLDING_STATUSES: BookingStatus[] = ["pending_payment", "confirmed", "active"];
 
@@ -23,11 +24,15 @@ export async function updateBookingStatus(formData: FormData) {
   const id = String(formData.get("id"));
   const target = String(formData.get("target")) as BookingStatus;
 
-  const booking = await prisma.booking.findUnique({ where: { id } });
+  const booking = await prisma.booking.findUnique({
+    where: { id },
+    include: { vehicle: { select: { name: true } } },
+  });
   if (!booking) throw new Error("Booking not found");
   assertTransition(booking.status, target);
 
   const data: Prisma.BookingUpdateInput = { status: target };
+  let refundCentsForNotify = 0;
 
   if (target === "confirmed") {
     data.holdExpiresAt = null;
@@ -56,9 +61,15 @@ export async function updateBookingStatus(formData: FormData) {
       }
       data.refundCents = refund.refundCents;
     }
+    refundCentsForNotify = refund.refundCents;
   }
 
   await prisma.booking.update({ where: { id }, data });
+
+  if (target === "confirmed") await notifyBooking("booking_confirmed", booking);
+  else if (target === "cancelled")
+    await notifyBooking("booking_cancelled", booking, { refundCents: refundCentsForNotify });
+  else if (target === "completed") await notifyBooking("review_invite", booking);
 }
 
 /** Extend an active/confirmed rental, charging the tier-aware difference (collected offline). */
@@ -172,9 +183,10 @@ export async function createManualBooking(formData: FormData) {
     days,
   });
 
+  const ref = reference();
   const booking = await prisma.booking.create({
     data: {
-      reference: reference(),
+      reference: ref,
       vehicleId,
       customerName,
       customerEmail,
@@ -191,6 +203,14 @@ export async function createManualBooking(formData: FormData) {
       extras: [],
     },
     select: { id: true },
+  });
+
+  await notifyBooking("booking_confirmed", {
+    id: booking.id,
+    reference: ref,
+    userId: null,
+    customerEmail,
+    vehicle: { name: vehicle.name },
   });
 
   redirect(`/${locale}/admin/bookings/${booking.id}`);

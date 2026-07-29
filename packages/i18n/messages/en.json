@@ -112,6 +112,30 @@
     "reviewThanks": "Thanks! Your review is awaiting approval.",
     "reviewed": "Review submitted"
   },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications yet.",
+    "markAllRead": "Mark all as read",
+    "leaveReview": "Leave a review",
+    "types": {
+      "booking_confirmed": {
+        "title": "Booking confirmed",
+        "body": "Your booking {reference} for {vehicle} is confirmed. See you soon!"
+      },
+      "booking_cancelled": {
+        "title": "Booking cancelled",
+        "body": "Your booking {reference} for {vehicle} has been cancelled."
+      },
+      "booking_completed": {
+        "title": "Rental completed",
+        "body": "Thanks for renting {vehicle} — booking {reference}."
+      },
+      "review_invite": {
+        "title": "How was your rental?",
+        "body": "Your rental of {vehicle} is complete. We'd love a review for booking {reference}."
+      }
+    }
+  },
   "booking": {
     "title": "Book {vehicle}",
     "pickup": "Pick-up date",
