@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { formatPrice, formatDate } from "@/lib/format";
 import { canTransition } from "@/lib/booking-state";
 import { CancelButton } from "@/components/account/cancel-button";
+import { ReviewForm } from "@/components/account/review-form";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,10 @@ export default async function AccountPage({ params }: { params: Promise<{ locale
   const bookings = await prisma.booking.findMany({
     where: { userId: user.id },
     orderBy: { startAt: "desc" },
-    include: { vehicle: { select: { name: true, slug: true } } },
+    include: {
+      vehicle: { select: { name: true, slug: true } },
+      review: { select: { id: true } },
+    },
   });
 
   return (
@@ -72,6 +76,13 @@ export default async function AccountPage({ params }: { params: Promise<{ locale
                     <div className="mt-2">
                       <CancelButton bookingId={b.id} />
                     </div>
+                  ) : null}
+                  {b.status === "completed" ? (
+                    b.review ? (
+                      <p className="mt-2 text-xs text-muted">{t("reviewed")}</p>
+                    ) : (
+                      <ReviewForm bookingId={b.id} />
+                    )
                   ) : null}
                 </div>
               </div>

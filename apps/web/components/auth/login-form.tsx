@@ -8,7 +8,7 @@ import { authClient } from "@/lib/auth-client";
 const inputClass =
   "w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-foreground outline-none focus:border-primary";
 
-export function LoginForm() {
+export function LoginForm({ googleEnabled = false }: { googleEnabled?: boolean }) {
   const t = useTranslations("auth");
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -56,13 +56,15 @@ export function LoginForm() {
       >
         {t("signIn")}
       </button>
-      <button
-        type="button"
-        onClick={() => authClient.signIn.social({ provider: "google", callbackURL: "/account" })}
-        className="w-full rounded-lg border border-border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface"
-      >
-        {t("google")}
-      </button>
+      {googleEnabled ? (
+        <button
+          type="button"
+          onClick={() => authClient.signIn.social({ provider: "google", callbackURL: "/account" })}
+          className="w-full rounded-lg border border-border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface"
+        >
+          {t("google")}
+        </button>
+      ) : null}
     </form>
   );
 }

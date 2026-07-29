@@ -88,7 +88,12 @@
     "statusConfirmed": "Konfirmuar",
     "statusActive": "Aktive",
     "statusCompleted": "Përfunduar",
-    "statusCancelled": "Anuluar"
+    "statusCancelled": "Anuluar",
+    "reviewCta": "Lër një vlerësim",
+    "reviewComment": "Trego të tjerëve për përvojën tënde (opsionale)",
+    "reviewSubmit": "Dërgo vlerësimin",
+    "reviewThanks": "Faleminderit! Vlerësimi juaj është në pritje të aprovimit.",
+    "reviewed": "Vlerësimi u dërgua"
   },
   "booking": {
     "title": "Rezervo {vehicle}",
@@ -117,8 +122,54 @@
     "reference": "Referenca",
     "backHome": "Kthehu në ballinë"
   },
+  "pages": {
+    "about": {
+      "title": "Rreth AutoRent",
+      "lead": "Kompani vendore për dhënie veturash me qira në Prishtinë, e ndërtuar për udhëtarë dhe vendas që duan një veturë pa telashe.",
+      "p1": "AutoRent filloi me një ide të thjeshtë: marrja e një veture me qira duhet të jetë aq e lehtë sa rezervimi i një dhome hoteli. Zgjidhni datat, paguani online dhe merrni çelësat në degën tonë — pa surpriza me dokumente, pa tarifa të fshehta.",
+      "p2": "Mbajmë një flotë të mirëmbajtur me kujdes, nga veturat e qytetit te SUV-të familjare dhe furgonat. Çdo veturë servisohet me kohë, është plotësisht e siguruar dhe pastrohet para çdo qiraje.",
+      "p3": "Meqë operojmë nga një vendndodhje e vetme në Prishtinë, e njohim çdo veturë që japim — dhe jemi këtu personalisht nëse ju duhet diçka gjatë udhëtimit."
+    },
+    "contact": {
+      "title": "Na kontaktoni",
+      "lead": "Pyetje për një rezervim apo për flotën? Na shkruani — zakonisht përgjigjemi brenda pak orësh.",
+      "addressLabel": "Dega",
+      "address": "Rr. Nëna Terezë 42, 10000 Prishtinë, Kosovë",
+      "phoneLabel": "Telefoni",
+      "phone": "+383 44 000 000",
+      "emailLabel": "Email",
+      "email": "hello@autorent.example",
+      "hoursLabel": "Orari",
+      "hours": "Çdo ditë, 08:00 – 20:00"
+    },
+    "faq": {
+      "title": "Pyetjet më të shpeshta",
+      "lead": "Gjithçka që duhet të dini para se të rezervoni.",
+      "items": [
+        { "q": "Si mund të rezervoj një veturë?", "a": "Zgjidhni veturën dhe datat, shtoni ekstrat që dëshironi dhe paguani në mënyrë të sigurt online. Rezervimi juaj konfirmohet në momentin që kalon pagesa." },
+        { "q": "Kur paguaj?", "a": "Paguani të plotë online në momentin e rezervimit. Nuk ka asgjë për të paguar gjatë marrjes, përveç nëse shtoni ekstra më vonë." },
+        { "q": "A mund ta anuloj ose ndryshoj rezervimin?", "a": "Po. Anuloni së paku 48 orë para marrjes për rimbursim të plotë. Anulimet pas kësaj marrin 50% rimbursim." },
+        { "q": "Çfarë më duhet gjatë marrjes?", "a": "Një patentë e vlefshme, një letërnjoftim ose pasaportë dhe karta e përdorur për rezervimin. Shoferi duhet të përputhet me të dhënat e rezervimit." },
+        { "q": "A ka depozitë?", "a": "Disa vetura kërkojnë një depozitë të kthyeshme sigurie, të shfaqur në faqen e veturës. Ajo lirohet pasi vetura kthehet në gjendje të mirë." },
+        { "q": "Ku e marr veturën?", "a": "Në degën tonë në Prishtinë. Adresa e saktë dhe udhëzimet janë në email-in e konfirmimit." }
+      ]
+    },
+    "terms": {
+      "title": "Kushtet e përdorimit",
+      "updated": "Përditësuar së fundi: korrik 2026",
+      "sections": [
+        { "h": "1. Rezervimi dhe pagesa", "b": "Të gjitha rezervimet bëhen online dhe paguhen të plota në momentin e rezervimit. Një rezervim konfirmohet vetëm pasi pagesa është procesuar me sukses." },
+        { "h": "2. Kërkesat për shoferin", "b": "Shoferi kryesor duhet të ketë një patentë të vlefshme të mbajtur së paku një vit dhe të paraqesë një letërnjoftim ose pasaportë të vlefshme gjatë marrjes." },
+        { "h": "3. Anulimet dhe rimbursimet", "b": "Anulimet e bëra së paku 48 orë para kohës së marrjes marrin rimbursim të plotë. Anulimet më vonë marrin 50% rimbursim. Mosparaqitjet nuk rimbursohen." },
+        { "h": "4. Përdorimi i veturës", "b": "Veturat duhet të përdoren në mënyrë të ligjshme dhe të kthehen në gjendjen që janë dhënë, me të njëjtin nivel karburanti. Qiramarrësi është përgjegjës për gjobat dhe pagesat rrugore gjatë qirasë." },
+        { "h": "5. Sigurimi dhe depozita", "b": "Të gjitha veturat përfshijnë sigurim bazë. Mund të aplikohet një depozitë e kthyeshme që lirohet pasi vetura kthehet pa dëme." },
+        { "h": "6. Përgjegjësia", "b": "AutoRent nuk mban përgjegjësi për sendet personale të lëna në veturë ose për vonesa të shkaktuara nga rrethana jashtë kontrollit tonë." }
+      ]
+    }
+  },
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
-    "rights": "Të gjitha të drejtat e rezervuara."
+    "rights": "Të gjitha të drejtat e rezervuara.",
+    "terms": "Kushtet"
   }
 }

@@ -9,12 +9,13 @@ export default async function LoginPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   if (await getSessionUser()) redirect(`/${locale}/account`);
   const t = await getTranslations("auth");
+  const googleEnabled = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 
   return (
     <main className="mx-auto max-w-md px-4 py-16">
       <h1 className="text-2xl font-bold">{t("signIn")}</h1>
       <p className="mb-6 mt-1 text-sm text-muted">{t("signInSubtitle")}</p>
-      <LoginForm />
+      <LoginForm googleEnabled={googleEnabled} />
       <p className="mt-6 text-sm text-muted">
         {t("noAccount")}{" "}
         <Link href="/register" className="font-medium text-primary hover:underline">

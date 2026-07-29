@@ -88,7 +88,12 @@
     "statusConfirmed": "Confirmed",
     "statusActive": "Active",
     "statusCompleted": "Completed",
-    "statusCancelled": "Cancelled"
+    "statusCancelled": "Cancelled",
+    "reviewCta": "Leave a review",
+    "reviewComment": "Tell others about your experience (optional)",
+    "reviewSubmit": "Submit review",
+    "reviewThanks": "Thanks! Your review is awaiting approval.",
+    "reviewed": "Review submitted"
   },
   "booking": {
     "title": "Book {vehicle}",
@@ -117,8 +122,54 @@
     "reference": "Reference",
     "backHome": "Back to home"
   },
+  "pages": {
+    "about": {
+      "title": "About AutoRent",
+      "lead": "Locally owned car rental based in Prishtina, built for travellers and locals who want a car without the hassle.",
+      "p1": "AutoRent started with a simple idea: renting a car should be as easy as booking a hotel room. Pick your dates, pay online, and collect the keys at our branch — no paperwork surprises, no hidden fees.",
+      "p2": "We keep a carefully maintained fleet, from city hatchbacks to family SUVs and vans. Every car is serviced on schedule, fully insured, and cleaned before each rental.",
+      "p3": "Because we operate from a single location in Prishtina, we know every car we hand over — and we're here in person if you need anything during your trip."
+    },
+    "contact": {
+      "title": "Contact us",
+      "lead": "Questions about a booking or the fleet? Reach out — we usually reply within a few hours.",
+      "addressLabel": "Branch",
+      "address": "Rr. Nëna Terezë 42, 10000 Prishtina, Kosovo",
+      "phoneLabel": "Phone",
+      "phone": "+383 44 000 000",
+      "emailLabel": "Email",
+      "email": "hello@autorent.example",
+      "hoursLabel": "Opening hours",
+      "hours": "Every day, 08:00 – 20:00"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "lead": "Everything you need to know before you book.",
+      "items": [
+        { "q": "How do I book a car?", "a": "Choose your car and dates, add any extras, and pay securely online. Your booking is confirmed the moment payment goes through." },
+        { "q": "When do I pay?", "a": "You pay in full online at the time of booking. There's nothing to pay at pick-up unless you add extras later." },
+        { "q": "Can I cancel or change my booking?", "a": "Yes. Cancel at least 48 hours before pick-up for a full refund. Cancellations after that receive a 50% refund." },
+        { "q": "What do I need at pick-up?", "a": "A valid driving licence, an ID or passport, and the card used for the booking. The driver must match the booking details." },
+        { "q": "Is there a deposit?", "a": "Some cars require a refundable security deposit, shown on the car's page. It's released after the car is returned in good condition." },
+        { "q": "Where do I collect the car?", "a": "From our branch in Prishtina. The exact address and directions are in your confirmation email." }
+      ]
+    },
+    "terms": {
+      "title": "Terms & conditions",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        { "h": "1. Booking and payment", "b": "All bookings are made online and paid in full at the time of booking. A booking is only confirmed once payment has been successfully processed." },
+        { "h": "2. Driver requirements", "b": "The main driver must hold a valid driving licence held for at least one year and present a valid ID or passport at pick-up." },
+        { "h": "3. Cancellations and refunds", "b": "Cancellations made at least 48 hours before the pick-up time receive a full refund. Later cancellations receive a 50% refund. No-shows are non-refundable." },
+        { "h": "4. Use of the vehicle", "b": "Vehicles must be used lawfully and returned in the condition they were provided, with the same fuel level. The renter is responsible for fines and tolls incurred during the rental." },
+        { "h": "5. Insurance and deposit", "b": "All vehicles include basic insurance. A refundable deposit may apply and is released after the vehicle is returned undamaged." },
+        { "h": "6. Liability", "b": "AutoRent is not liable for personal belongings left in the vehicle or for delays caused by circumstances beyond our control." }
+      ]
+    }
+  },
   "footer": {
     "tagline": "The easiest way to rent a car.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "terms": "Terms"
   }
 }
