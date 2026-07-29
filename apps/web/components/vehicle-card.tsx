@@ -18,13 +18,18 @@ export function VehicleCard({
       href={`/fleet/${vehicle.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-transform duration-200 hover:-translate-y-1 hover:border-primary"
     >
-      <VehiclePhoto
-        src={vehicle.photos[0]}
-        alt={vehicle.name}
-        vehicleClass={vehicle.class}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-        className="aspect-video transition-transform duration-200 group-hover:scale-[1.03]"
-      />
+      <div className="relative">
+        <VehiclePhoto
+          src={vehicle.photos[0]}
+          alt={vehicle.name}
+          vehicleClass={vehicle.class}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+          className="aspect-video transition-transform duration-500 group-hover:scale-105"
+        />
+        <span className="absolute left-3 top-3 rounded-full bg-background/80 px-2.5 py-1 text-xs font-medium text-foreground backdrop-blur">
+          {formatVehicleClass(vehicle.class)}
+        </span>
+      </div>
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
           <h3 className="font-semibold text-foreground">{vehicle.name}</h3>
