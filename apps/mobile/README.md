@@ -29,7 +29,7 @@ device — it does not run in the web preview.
 Create `apps/mobile/.env` (all `EXPO_PUBLIC_` vars are inlined at build time):
 
 ```
-EXPO_PUBLIC_API_URL=https://autorent-web-nine.vercel.app
+EXPO_PUBLIC_API_URL=https://autorent-ks.vercel.app
 EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
 ```
 
