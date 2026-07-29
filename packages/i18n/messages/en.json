@@ -28,6 +28,23 @@
     "viewFleet": "View the fleet",
     "viewAll": "View all cars"
   },
+  "availability": {
+    "title": "Check availability",
+    "subtitle": "Pick your dates to see which cars are free — and which days each car is booked.",
+    "pickup": "Pick-up",
+    "return": "Return",
+    "check": "Check",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "forRange": "Availability for {from} → {to}",
+    "next14": "Next 14 days",
+    "free": "Free",
+    "booked": "Booked",
+    "hint": "Showing the next 14 days from today. Add dates above to check a specific period.",
+    "book": "Book",
+    "view": "View",
+    "empty": "No cars to show."
+  },
   "fleet": {
     "title": "Our fleet",
     "subtitle": "Choose your car and check availability for your dates.",

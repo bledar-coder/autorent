@@ -28,6 +28,23 @@
     "viewFleet": "Shiko flotën",
     "viewAll": "Shiko të gjitha makinat"
   },
+  "availability": {
+    "title": "Kontrollo disponueshmërinë",
+    "subtitle": "Zgjidhni datat për të parë cilat makina janë të lira — dhe cilat ditë është e zënë secila.",
+    "pickup": "Marrja",
+    "return": "Kthimi",
+    "check": "Kontrollo",
+    "available": "E lirë",
+    "unavailable": "E zënë",
+    "forRange": "Disponueshmëria për {from} → {to}",
+    "next14": "14 ditët e ardhshme",
+    "free": "E lirë",
+    "booked": "E zënë",
+    "hint": "Po shfaqen 14 ditët e ardhshme nga sot. Shtoni datat lart për një periudhë specifike.",
+    "book": "Rezervo",
+    "view": "Shiko",
+    "empty": "Nuk ka makina për të shfaqur."
+  },
   "fleet": {
     "title": "Flota jonë",
     "subtitle": "Zgjidh makinën dhe kontrollo disponueshmërinë për datat e tua.",
