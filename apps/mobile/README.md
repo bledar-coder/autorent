@@ -1,6 +1,6 @@
 # @autorent/mobile
 
-AutoRent's customer app — Expo (SDK 52) + Expo Router. It consumes the shared
+AutoRent's customer app — Expo (SDK 54) + Expo Router. It consumes the shared
 `/api/v1` backend and `@autorent/tokens`/`@autorent/api-client`, never
 reimplementing business rules. Booking uses the Stripe Payment Sheet, driven by
 the `clientSecret` the backend returns from `POST /api/v1/bookings`.
