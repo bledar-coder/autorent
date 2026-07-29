@@ -5,8 +5,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { isLocale } from "@autorent/i18n";
 import { routing } from "@/i18n/routing";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -35,13 +33,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
-        <NextIntlClientProvider messages={messages}>
-          <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-          </div>
-        </NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

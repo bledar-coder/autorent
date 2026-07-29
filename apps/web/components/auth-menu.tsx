@@ -22,8 +22,15 @@ export function AuthMenu() {
     );
   }
 
+  const isAdmin = (session.user as { role?: string }).role === "admin";
+
   return (
     <div className="flex items-center gap-3">
+      {isAdmin ? (
+        <Link href="/admin" className="text-sm font-medium text-primary transition-colors hover:opacity-80">
+          Admin
+        </Link>
+      ) : null}
       <Link href="/account" className="text-sm text-muted transition-colors hover:text-foreground">
         {nav("account")}
       </Link>
