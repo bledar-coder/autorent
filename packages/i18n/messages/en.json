@@ -223,11 +223,17 @@
       "emailLabel": "Email",
       "email": "hello@autorent.example",
       "hoursLabel": "Opening hours",
-      "hours": "Every day, 08:00 – 20:00"
+      "hours": "Every day, 08:00 – 20:00",
+      "kicker": "Contact",
+      "mapTitle": "Find us on the map"
     },
     "faq": {
       "title": "Frequently asked questions",
       "lead": "Everything you need to know before you book.",
+      "kicker": "FAQ",
+      "stillTitle": "Still have questions?",
+      "stillText": "We're happy to help — reach out any time.",
+      "stillCta": "Contact us",
       "items": [
         { "q": "How do I book a car?", "a": "Choose your car and dates, add any extras, and pay securely online. Your booking is confirmed the moment payment goes through." },
         { "q": "When do I pay?", "a": "You pay in full online at the time of booking. There's nothing to pay at pick-up unless you add extras later." },

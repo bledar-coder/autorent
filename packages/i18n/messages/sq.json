@@ -223,11 +223,17 @@
       "emailLabel": "Email",
       "email": "hello@autorent.example",
       "hoursLabel": "Orari",
-      "hours": "Çdo ditë, 08:00 – 20:00"
+      "hours": "Çdo ditë, 08:00 – 20:00",
+      "kicker": "Kontakt",
+      "mapTitle": "Na gjeni në hartë"
     },
     "faq": {
       "title": "Pyetjet më të shpeshta",
       "lead": "Gjithçka që duhet të dini para se të rezervoni.",
+      "kicker": "FAQ",
+      "stillTitle": "Keni ende pyetje?",
+      "stillText": "Jemi këtu për t'ju ndihmuar — na kontaktoni në çdo kohë.",
+      "stillCta": "Na kontaktoni",
       "items": [
         { "q": "Si mund të rezervoj një veturë?", "a": "Zgjidhni veturën dhe datat, shtoni ekstrat që dëshironi dhe paguani në mënyrë të sigurt online. Rezervimi juaj konfirmohet në momentin që kalon pagesa." },
         { "q": "Kur paguaj?", "a": "Paguani të plotë online në momentin e rezervimit. Nuk ka asgjë për të paguar gjatë marrjes, përveç nëse shtoni ekstra më vonë." },
