@@ -5,7 +5,7 @@ import { ArrowLeft, Star, Users, DoorOpen, Gauge, Fuel, Calendar } from "lucide-
 import { Link } from "@/i18n/navigation";
 import { getVehicleBySlug } from "@/lib/queries/vehicles";
 import { formatPrice, formatVehicleClass, titleCase } from "@/lib/format";
-import { VehiclePhoto } from "@/components/vehicle-photo";
+import { VehicleGallery } from "@/components/vehicle-gallery";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
@@ -96,30 +96,7 @@ export default async function VehiclePage({
 
       <div className="mt-6 grid gap-8 lg:grid-cols-2">
         {/* Gallery */}
-        <div className="space-y-3">
-          <VehiclePhoto
-            src={vehicle.photos[0]}
-            alt={vehicle.name}
-            vehicleClass={vehicle.class}
-            priority
-            sizes="(max-width: 1024px) 100vw, 600px"
-            className="aspect-video rounded-xl border border-border"
-          />
-          {vehicle.photos.length > 1 ? (
-            <div className="grid grid-cols-4 gap-3">
-              {vehicle.photos.slice(1, 5).map((photo, i) => (
-                <VehiclePhoto
-                  key={photo}
-                  src={photo}
-                  alt={`${vehicle.name} — ${i + 2}`}
-                  vehicleClass={vehicle.class}
-                  sizes="150px"
-                  className="aspect-video rounded-md border border-border"
-                />
-              ))}
-            </div>
-          ) : null}
-        </div>
+        <VehicleGallery photos={vehicle.photos} name={vehicle.name} vehicleClass={vehicle.class} />
 
         {/* Info */}
         <div>
