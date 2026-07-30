@@ -99,31 +99,29 @@ export function FleetFilters() {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
-        <div className="grid gap-1.5">
-          <label className="text-sm text-muted" htmlFor="f-from">
-            {t("pickup")}
-          </label>
-          <input
-            id="f-from"
-            type="date"
-            className={selectClass}
-            value={val("from")}
-            onChange={(e) => setParam("from", e.target.value)}
-          />
-        </div>
-        <div className="grid gap-1.5">
-          <label className="text-sm text-muted" htmlFor="f-to">
-            {t("return")}
-          </label>
-          <input
-            id="f-to"
-            type="date"
-            className={selectClass}
-            value={val("to")}
-            onChange={(e) => setParam("to", e.target.value)}
-          />
-        </div>
+      <div className="grid gap-1.5">
+        <label className="text-sm text-muted" htmlFor="f-from">
+          {t("pickup")}
+        </label>
+        <input
+          id="f-from"
+          type="date"
+          className={selectClass}
+          value={val("from")}
+          onChange={(e) => setParam("from", e.target.value)}
+        />
+      </div>
+      <div className="grid gap-1.5">
+        <label className="text-sm text-muted" htmlFor="f-to">
+          {t("return")}
+        </label>
+        <input
+          id="f-to"
+          type="date"
+          className={selectClass}
+          value={val("to")}
+          onChange={(e) => setParam("to", e.target.value)}
+        />
       </div>
 
       <button
