@@ -248,8 +248,39 @@ async function main() {
     },
   });
 
+  // A spread of approved reviews (mixed sq/en) so the site feels alive.
+  const REVIEWS = [
+    { vi: 11, name: "Elira Berisha", email: "elira.b@example.com", rating: 5, comment: "Makina ishte perfekte, e pastër dhe autonomia e shkëlqyer. Do ta marr sërish!" },
+    { vi: 7, name: "Driton Hoxha", email: "driton.h@example.com", rating: 4, comment: "Great value SUV for our trip to the mountains. Comfortable and reliable." },
+    { vi: 2, name: "Vlora Gashi", email: "vlora.g@example.com", rating: 5, comment: "Rezervim i lehtë online dhe stafi shumë i sjellshëm. Veturë elegante!" },
+    { vi: 5, name: "Fatjon Musa", email: "fatjon.m@example.com", rating: 5, comment: "Roomy, clean and great on fuel. The whole process took minutes." },
+    { vi: 6, name: "Rina Zeqiri", email: "rina.z@example.com", rating: 4, comment: "Hibridi kurseu shumë karburant. Marrje pa probleme, e rekomandoj." },
+    { vi: 3, name: "Leon Ademi", email: "leon.a@example.com", rating: 5, comment: "The 320i was immaculate and a joy to drive. Fair price, no surprises." },
+    { vi: 1, name: "Blerta Kelmendi", email: "blerta.k@example.com", rating: 5, comment: "Veturë e rehatshme dhe e gjerë, perfekte për familjen. Shërbim top!" },
+  ];
+  for (const [i, r] of REVIEWS.entries()) {
+    const u = await prisma.user.upsert({
+      where: { email: r.email },
+      update: {},
+      create: { name: r.name, email: r.email, phone: "+383 49 123 456" },
+    });
+    const b = await bookingFor(
+      `AR-RV${String(i + 1).padStart(4, "0")}`,
+      r.vi,
+      u,
+      -(30 + i),
+      3,
+      "completed",
+      "manual",
+      "paid_offline",
+    );
+    await prisma.review.create({
+      data: { bookingId: b.id, vehicleId: vehicles[r.vi]!.id, userId: u.id, rating: r.rating, comment: r.comment, status: "approved" },
+    });
+  }
+
   console.log(
-    `Seed complete: ${vehicles.length} vehicles, ${extras.length} extras, 2 promo codes, 5 bookings, admin=${admin.email}`,
+    `Seed complete: ${vehicles.length} vehicles, ${extras.length} extras, 2 promo codes, ${5 + REVIEWS.length} bookings, ${1 + REVIEWS.length} reviews, admin=${admin.email}`,
   );
 }
 

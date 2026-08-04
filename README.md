@@ -4,6 +4,16 @@ A production-grade, bilingual (Albanian / English) **car-rental platform** for a
 
 **▶ Live demo: [autorent-ks.vercel.app](https://autorent-ks.vercel.app)**
 
+## Screenshots
+
+| Home (light) | Home (dark) |
+|---|---|
+| ![Home light](docs/screenshots/home-light.png) | ![Home dark](docs/screenshots/home-dark.png) |
+
+| Vehicle detail | Mobile |
+|---|---|
+| ![Vehicle](docs/screenshots/vehicle.png) | <img src="docs/screenshots/mobile-vehicle.png" width="240" alt="Mobile vehicle page" /> |
+
 ---
 
 ## Highlights
