@@ -4,6 +4,7 @@ import { SportsCarMark } from "./sports-car-mark";
 import { LanguageSwitcher } from "./language-switcher";
 import { AuthMenu } from "./auth-menu";
 import { NotificationBell } from "./notification-bell";
+import { NavAccountLink } from "./nav-account-link";
 
 const NAV = [
   { href: "/", key: "home" },
@@ -38,6 +39,7 @@ export async function SiteHeader() {
               {t(item.key)}
             </Link>
           ))}
+          <NavAccountLink />
         </nav>
 
         <div className="flex items-center gap-4">

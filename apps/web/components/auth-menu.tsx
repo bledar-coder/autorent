@@ -6,7 +6,6 @@ import { authClient } from "@/lib/auth-client";
 
 export function AuthMenu() {
   const auth = useTranslations("auth");
-  const nav = useTranslations("nav");
   const { data: session, isPending } = authClient.useSession();
 
   if (isPending) return <span className="h-8 w-16" />;
@@ -31,9 +30,6 @@ export function AuthMenu() {
           Admin
         </Link>
       ) : null}
-      <Link href="/account" className="text-sm text-muted transition-colors hover:text-foreground">
-        {nav("account")}
-      </Link>
       <button
         type="button"
         onClick={() => authClient.signOut().then(() => window.location.reload())}
