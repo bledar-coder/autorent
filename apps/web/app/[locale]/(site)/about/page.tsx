@@ -28,10 +28,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("pages.about");
   const contact = await getTranslations("pages.contact");
   const carCount = await prisma.vehicle.count({ where: { status: "active" } }).catch(() => 12);
+  const ratingAgg = await prisma.review
+    .aggregate({ _avg: { rating: true }, where: { status: "approved" } })
+    .catch(() => null);
+  const avgRating = ratingAgg?._avg.rating ? ratingAgg._avg.rating.toFixed(1) : "5.0";
 
   const stats = [
-    { value: `${carCount}`, label: t("statCarsLabel") },
-    { value: "1", label: t("statBranchLabel") },
+    { value: `${carCount}+`, label: t("statCarsLabel") },
+    { value: avgRating, label: t("statRatingLabel") },
     { value: "100%", label: t("statOnlineLabel") },
     { value: "48h", label: t("statCancelLabel") },
   ];

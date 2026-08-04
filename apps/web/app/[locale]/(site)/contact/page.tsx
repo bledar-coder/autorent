@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
 
 export async function generateMetadata({
   params,
@@ -74,6 +75,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-2xl">
+          <ContactForm email={t("email")} />
         </div>
       </section>
     </>

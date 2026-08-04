@@ -54,7 +54,7 @@ export function VehicleGallery({
         type="button"
         onClick={() => setOpen(0)}
         className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-border"
-        aria-label={`${name} — view photos`}
+        aria-label={`${name} ·view photos`}
       >
         <VehiclePhoto
           src={photos[0]}
@@ -74,11 +74,11 @@ export function VehicleGallery({
               type="button"
               onClick={() => setOpen(i + 1)}
               className="block cursor-zoom-in overflow-hidden rounded-md border border-border"
-              aria-label={`${name} — photo ${i + 2}`}
+              aria-label={`${name} ·photo ${i + 2}`}
             >
               <VehiclePhoto
                 src={photo}
-                alt={`${name} — ${i + 2}`}
+                alt={`${name} ·${i + 2}`}
                 vehicleClass={vehicleClass}
                 sizes="150px"
                 className="aspect-video transition-transform duration-300 hover:scale-105"
@@ -137,7 +137,7 @@ export function VehicleGallery({
           >
             <Image
               src={photos[open]!}
-              alt={`${name} — ${open + 1}`}
+              alt={`${name} ·${open + 1}`}
               fill
               sizes="100vw"
               className="object-contain"

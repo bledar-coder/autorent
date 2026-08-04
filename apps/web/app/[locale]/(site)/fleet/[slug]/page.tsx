@@ -84,7 +84,7 @@ export default async function VehiclePage({
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 pb-28 pt-10 lg:pb-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <Link
@@ -182,6 +182,22 @@ export default async function VehiclePage({
           </ul>
         )}
       </section>
+
+      {/* Sticky booking bar on mobile */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-4 py-3 backdrop-blur lg:hidden">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+          <div>
+            <span className="text-lg font-bold">{formatPrice(vehicle.dailyRateCents, locale)}</span>
+            <span className="text-sm text-muted"> {t("perDay")}</span>
+          </div>
+          <Link
+            href={`/fleet/${vehicle.slug}/book`}
+            className="rounded-lg bg-primary px-6 py-2.5 font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            {t("bookNow")}
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

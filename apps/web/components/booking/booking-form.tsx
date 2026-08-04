@@ -107,7 +107,18 @@ export function BookingForm({
 
   if (clientSecret) {
     return (
-      <Elements stripe={stripePromise} options={{ clientSecret, appearance: { theme: "night" } }}>
+      <Elements
+        stripe={stripePromise}
+        options={{
+          clientSecret,
+          appearance: {
+            theme:
+              typeof document !== "undefined" && document.documentElement.classList.contains("dark")
+                ? "night"
+                : "stripe",
+          },
+        }}
+      >
         <PaymentStep
           amountLabel={breakdown ? formatPrice(breakdown.totalCents, locale) : ""}
           locale={locale}

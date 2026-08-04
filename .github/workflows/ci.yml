@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # dummy value so Prisma Client can instantiate at build; no DB is contacted
+      DATABASE_URL: postgresql://user:pass@localhost:5432/autorent
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @autorent/web exec tsc --noEmit
+      - run: pnpm --filter @autorent/web test
+      - run: pnpm --filter @autorent/web build

@@ -199,6 +199,7 @@
       "storyTitle": "Historia jonë",
       "statCarsLabel": "makina në flotë",
       "statBranchLabel": "degë në Prishtinë",
+      "statRatingLabel": "vlerësim mesatar",
       "statOnlineLabel": "rezervim online",
       "statCancelLabel": "anulim falas",
       "valuesTitle": "Në çka besojmë",
@@ -226,7 +227,13 @@
       "hoursLabel": "Orari",
       "hours": "Çdo ditë, 08:00 – 20:00",
       "kicker": "Kontakt",
-      "mapTitle": "Na gjeni në hartë"
+      "mapTitle": "Na gjeni në hartë",
+      "formTitle": "Na dërgoni një mesazh",
+      "formName": "Emri juaj",
+      "formEmail": "Email-i juaj",
+      "formMessage": "Si mund t'ju ndihmojmë?",
+      "formSend": "Dërgo mesazhin",
+      "formNote": "Kjo hap aplikacionin tuaj të email-it me mesazhin gati për dërgim."
     },
     "faq": {
       "title": "Pyetjet më të shpeshta",

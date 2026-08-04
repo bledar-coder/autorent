@@ -161,7 +161,7 @@ async function main() {
         ...v,
         weeklyRateCents: v.dailyRateCents * 6,
         monthlyRateCents: v.dailyRateCents * 24,
-        description: `${v.name} — ${v.transmission}, ${v.fuelType}, ${v.seats} seats.`,
+        description: `${v.name}: ${v.transmission}, ${v.fuelType}, ${v.seats} seats.`,
         photos: PHOTOS[v.slug] ?? [],
         documents: {
           create: [

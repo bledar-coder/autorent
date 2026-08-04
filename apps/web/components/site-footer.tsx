@@ -44,8 +44,9 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-sm text-muted">
-          &copy; 2026 AutoRent. {t("rights")}
+        <div className="mt-10 flex flex-col gap-1 border-t border-border pt-6 text-sm text-muted">
+          <span>&copy; 2026 AutoRent. {t("rights")}</span>
+          <span className="text-xs">Vehicle photography via Wikimedia Commons (CC BY-SA).</span>
         </div>
       </div>
     </footer>

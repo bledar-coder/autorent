@@ -199,6 +199,7 @@
       "storyTitle": "Our story",
       "statCarsLabel": "cars in the fleet",
       "statBranchLabel": "branch in Prishtina",
+      "statRatingLabel": "average rating",
       "statOnlineLabel": "online booking",
       "statCancelLabel": "free cancellation",
       "valuesTitle": "What we stand for",
@@ -226,7 +227,13 @@
       "hoursLabel": "Opening hours",
       "hours": "Every day, 08:00 – 20:00",
       "kicker": "Contact",
-      "mapTitle": "Find us on the map"
+      "mapTitle": "Find us on the map",
+      "formTitle": "Send us a message",
+      "formName": "Your name",
+      "formEmail": "Your email",
+      "formMessage": "How can we help?",
+      "formSend": "Send message",
+      "formNote": "This opens your email app with the message ready to send."
     },
     "faq": {
       "title": "Frequently asked questions",
