@@ -7,9 +7,29 @@ import { isLocale } from "@autorent/i18n";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://autorent-ks.vercel.app";
+const DESCRIPTION =
+  "Rent a car in Prishtina. Book online, pay instantly, and pick up the keys at our branch.";
+
 export const metadata: Metadata = {
-  title: "AutoRent",
-  description: "Rent a car in Prishtina. Book online, pay instantly.",
+  metadataBase: new URL(APP_URL),
+  title: {
+    default: "AutoRent: Rent a car in Prishtina",
+    template: "%s | AutoRent",
+  },
+  description: DESCRIPTION,
+  applicationName: "AutoRent",
+  openGraph: {
+    type: "website",
+    siteName: "AutoRent",
+    title: "AutoRent: Rent a car in Prishtina",
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutoRent: Rent a car in Prishtina",
+    description: DESCRIPTION,
+  },
 };
 
 export function generateStaticParams() {

@@ -5,7 +5,7 @@
     "about": "Rreth nesh",
     "contact": "Kontakt",
     "faq": "Pyetje",
-    "account": "Llogaria",
+    "account": "Rezervimet e mia",
     "signIn": "Kyçu"
   },
   "common": {
@@ -35,11 +35,11 @@
     "whyInsuredTitle": "Plotësisht të siguruara",
     "whyInsuredText": "Çdo makinë është e siguruar dhe servisohet me kohë.",
     "whyInstantTitle": "Rezervim i menjëhershëm",
-    "whyInstantText": "Paguani online dhe konfirmohuni në sekonda — pa dokumente.",
+    "whyInstantText": "Paguani online dhe konfirmohuni në sekonda, pa dokumente.",
     "whyFlexibleTitle": "Fleksibël dhe e drejtë",
     "whyFlexibleText": "Anulim falas deri 48 orë para marrjes.",
     "whyLocalTitle": "Vendore dhe e besueshme",
-    "whyLocalText": "Një degë në Prishtinë — e njohim çdo makinë që japim.",
+    "whyLocalText": "Me bazë në Prishtinë, e njohim çdo makinë që japim.",
     "stepsTitle": "Si funksionon",
     "step1Title": "Zgjidhni datat",
     "step1Text": "Zgjidhni një makinë dhe kontrolloni disponueshmërinë.",
@@ -54,7 +54,7 @@
   },
   "availability": {
     "title": "Kontrollo disponueshmërinë",
-    "subtitle": "Zgjidhni datat për të parë cilat makina janë të lira — dhe cilat ditë është e zënë secila.",
+    "subtitle": "Zgjidhni datat për të parë cilat makina janë të lira, dhe cilat ditë është e zënë secila.",
     "pickup": "Marrja",
     "return": "Kthimi",
     "check": "Kontrollo",
@@ -152,7 +152,7 @@
       },
       "booking_completed": {
         "title": "Qiraja përfundoi",
-        "body": "Faleminderit që morët me qira {vehicle} — rezervimi {reference}."
+        "body": "Faleminderit që morët me qira {vehicle}. Rezervimi {reference}."
       },
       "review_invite": {
         "title": "Si ishte qiraja?",
@@ -177,13 +177,14 @@
     "total": "Totali",
     "continue": "Vazhdo te pagesa",
     "payTitle": "Pagesa",
+    "demoNote": "Modaliteti demo: përdorni kartën e testimit 4242 4242 4242 4242, çdo datë të ardhshme, çdo CVC.",
     "pay": "Paguaj {amount}",
     "processing": "Duke procesuar…",
     "error": "Diçka shkoi keq. Provo përsëri.",
     "confirmedTitle": "Rezervimi u konfirmua!",
     "confirmedText": "Faleminderit. Rezervimi yt është konfirmuar.",
     "pendingTitle": "Pagesa u pranua",
-    "pendingText": "Po e konfirmojmë rezervimin — do të marrësh një email së shpejti.",
+    "pendingText": "Po e konfirmojmë rezervimin. Do të marrësh një email së shpejti.",
     "reference": "Referenca",
     "backHome": "Kthehu në ballinë"
   },
@@ -191,9 +192,9 @@
     "about": {
       "title": "Rreth AutoRent",
       "lead": "Kompani vendore për dhënie veturash me qira në Prishtinë, e ndërtuar për udhëtarë dhe vendas që duan një veturë pa telashe.",
-      "p1": "AutoRent filloi me një ide të thjeshtë: marrja e një veture me qira duhet të jetë aq e lehtë sa rezervimi i një dhome hoteli. Zgjidhni datat, paguani online dhe merrni çelësat në degën tonë — pa surpriza me dokumente, pa tarifa të fshehta.",
+      "p1": "AutoRent filloi me një ide të thjeshtë: marrja e një veture me qira duhet të jetë aq e lehtë sa rezervimi i një dhome hoteli. Zgjidhni datat, paguani online dhe merrni çelësat në degën tonë, pa surpriza me dokumente dhe pa tarifa të fshehta.",
       "p2": "Mbajmë një flotë të mirëmbajtur me kujdes, nga veturat e qytetit te SUV-të familjare dhe furgonat. Çdo veturë servisohet me kohë, është plotësisht e siguruar dhe pastrohet para çdo qiraje.",
-      "p3": "Meqë operojmë nga një vendndodhje e vetme në Prishtinë, e njohim çdo veturë që japim — dhe jemi këtu personalisht nëse ju duhet diçka gjatë udhëtimit.",
+      "p3": "Meqë operojmë nga një vendndodhje e vetme në Prishtinë, e njohim çdo veturë që japim, dhe jemi këtu personalisht nëse ju duhet diçka gjatë udhëtimit.",
       "kicker": "Rreth nesh",
       "storyTitle": "Historia jonë",
       "statCarsLabel": "makina në flotë",
@@ -204,7 +205,7 @@
       "value1Title": "Besueshmëri",
       "value1Text": "Çdo makinë servisohet me kohë dhe është gati kur ju duhet.",
       "value2Title": "Transparencë",
-      "value2Text": "Çmime të qarta që në fillim — pa tarifa të fshehta, kurrë.",
+      "value2Text": "Çmime të qarta që në fillim, pa tarifa të fshehta, kurrë.",
       "value3Title": "Shërbim i vërtetë",
       "value3Text": "Një ekip vendor që mund ta kontaktoni personalisht, para dhe gjatë udhëtimit.",
       "locationTitle": "Vizitoni degën tonë",
@@ -215,13 +216,13 @@
     },
     "contact": {
       "title": "Na kontaktoni",
-      "lead": "Pyetje për një rezervim apo për flotën? Na shkruani — zakonisht përgjigjemi brenda pak orësh.",
+      "lead": "Pyetje për një rezervim apo për flotën? Na shkruani dhe zakonisht përgjigjemi brenda pak orësh.",
       "addressLabel": "Dega",
       "address": "Rr. Nëna Terezë 42, 10000 Prishtinë, Kosovë",
       "phoneLabel": "Telefoni",
-      "phone": "+383 44 000 000",
+      "phone": "+383 49 765 432",
       "emailLabel": "Email",
-      "email": "hello@autorent.example",
+      "email": "info@autorent-ks.com",
       "hoursLabel": "Orari",
       "hours": "Çdo ditë, 08:00 – 20:00",
       "kicker": "Kontakt",
@@ -232,12 +233,12 @@
       "lead": "Gjithçka që duhet të dini para se të rezervoni.",
       "kicker": "FAQ",
       "stillTitle": "Keni ende pyetje?",
-      "stillText": "Jemi këtu për t'ju ndihmuar — na kontaktoni në çdo kohë.",
+      "stillText": "Jemi këtu për t'ju ndihmuar, na kontaktoni në çdo kohë.",
       "stillCta": "Na kontaktoni",
       "items": [
         { "q": "Si mund të rezervoj një veturë?", "a": "Zgjidhni veturën dhe datat, shtoni ekstrat që dëshironi dhe paguani në mënyrë të sigurt online. Rezervimi juaj konfirmohet në momentin që kalon pagesa." },
         { "q": "Kur paguaj?", "a": "Paguani të plotë online në momentin e rezervimit. Nuk ka asgjë për të paguar gjatë marrjes, përveç nëse shtoni ekstra më vonë." },
-        { "q": "A mund ta anuloj ose ndryshoj rezervimin?", "a": "Po. Anuloni së paku 48 orë para marrjes për rimbursim të plotë. Anulimet pas kësaj marrin 50% rimbursim." },
+        { "q": "A mund ta anuloj ose ndryshoj rezervimin?", "a": "Po. Anuloni së paku 48 orë para marrjes për rimbursim të plotë. Anulimet pas kësaj marrin 50% rimbursim, dhe mosparaqitjet nuk rimbursohen." },
         { "q": "Çfarë më duhet gjatë marrjes?", "a": "Një patentë e vlefshme, një letërnjoftim ose pasaportë dhe karta e përdorur për rezervimin. Shoferi duhet të përputhet me të dhënat e rezervimit." },
         { "q": "A ka depozitë?", "a": "Disa vetura kërkojnë një depozitë të kthyeshme sigurie, të shfaqur në faqen e veturës. Ajo lirohet pasi vetura kthehet në gjendje të mirë." },
         { "q": "Ku e marr veturën?", "a": "Në degën tonë në Prishtinë. Adresa e saktë dhe udhëzimet janë në email-in e konfirmimit." }
@@ -252,9 +253,18 @@
         { "h": "3. Anulimet dhe rimbursimet", "b": "Anulimet e bëra së paku 48 orë para kohës së marrjes marrin rimbursim të plotë. Anulimet më vonë marrin 50% rimbursim. Mosparaqitjet nuk rimbursohen." },
         { "h": "4. Përdorimi i veturës", "b": "Veturat duhet të përdoren në mënyrë të ligjshme dhe të kthehen në gjendjen që janë dhënë, me të njëjtin nivel karburanti. Qiramarrësi është përgjegjës për gjobat dhe pagesat rrugore gjatë qirasë." },
         { "h": "5. Sigurimi dhe depozita", "b": "Të gjitha veturat përfshijnë sigurim bazë. Mund të aplikohet një depozitë e kthyeshme që lirohet pasi vetura kthehet pa dëme." },
-        { "h": "6. Përgjegjësia", "b": "AutoRent nuk mban përgjegjësi për sendet personale të lëna në veturë ose për vonesa të shkaktuara nga rrethana jashtë kontrollit tonë." }
+        { "h": "6. Përgjegjësia", "b": "AutoRent nuk mban përgjegjësi për sendet personale të lëna në veturë ose për vonesa të shkaktuara nga rrethana jashtë kontrollit tonë." },
+        { "h": "7. Aksidentet dhe defektet", "b": "Në rast aksidenti ose defekti, na kontaktoni menjëherë dhe, kur kërkohet me ligj, policinë. Mos pranoni përgjegjësi në vendngjarje. Ne do të organizojmë ndihmë ose një veturë zëvendësuese kur është e mundur." },
+        { "h": "8. Dëmet dhe depozita", "b": "Vetura inspektohet së bashku me qiramarrësin gjatë marrjes dhe dorëzimit. Çdo dëm përtej konsumimit normal vlerësohet në kthim dhe mund të zbritet nga depozita e kthyeshme; pjesa e mbetur e depozitës lirohet brenda pak ditësh pune." }
       ]
     }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Faqja nuk u gjet",
+    "text": "Faqja që kërkoni nuk ekziston ose mund të jetë zhvendosur.",
+    "home": "Kthehu në ballinë",
+    "fleet": "Shfleto flotën"
   },
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",

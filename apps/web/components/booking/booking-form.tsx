@@ -239,6 +239,9 @@ function PaymentStep({ amountLabel, locale }: { amountLabel: string; locale: str
   return (
     <form onSubmit={pay} className="mx-auto max-w-md space-y-5">
       <h2 className="text-lg font-semibold">{t("payTitle")}</h2>
+      <p className="rounded-md border border-warning/30 bg-warning/10 px-3 py-2 text-xs text-warning">
+        {t("demoNote")}
+      </p>
       <PaymentElement />
       {error && <p className="text-sm text-destructive">{error}</p>}
       <button

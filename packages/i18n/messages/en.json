@@ -5,7 +5,7 @@
     "about": "About",
     "contact": "Contact",
     "faq": "FAQ",
-    "account": "Account",
+    "account": "My bookings",
     "signIn": "Sign in"
   },
   "common": {
@@ -35,11 +35,11 @@
     "whyInsuredTitle": "Fully insured",
     "whyInsuredText": "Every car is insured and serviced on schedule.",
     "whyInstantTitle": "Instant booking",
-    "whyInstantText": "Pay online and get confirmed in seconds — no paperwork.",
+    "whyInstantText": "Pay online and get confirmed in seconds, with no paperwork.",
     "whyFlexibleTitle": "Flexible & fair",
     "whyFlexibleText": "Free cancellation up to 48 hours before pick-up.",
     "whyLocalTitle": "Local & trusted",
-    "whyLocalText": "One branch in Prishtina — we know every car we hand over.",
+    "whyLocalText": "Based in Prishtina, we know every car we hand over.",
     "stepsTitle": "How it works",
     "step1Title": "Pick your dates",
     "step1Text": "Choose a car and check availability for your dates.",
@@ -54,7 +54,7 @@
   },
   "availability": {
     "title": "Check availability",
-    "subtitle": "Pick your dates to see which cars are free — and which days each car is booked.",
+    "subtitle": "Pick your dates to see which cars are free, and which days each car is booked.",
     "pickup": "Pick-up",
     "return": "Return",
     "check": "Check",
@@ -152,7 +152,7 @@
       },
       "booking_completed": {
         "title": "Rental completed",
-        "body": "Thanks for renting {vehicle} — booking {reference}."
+        "body": "Thanks for renting {vehicle}. Booking {reference}."
       },
       "review_invite": {
         "title": "How was your rental?",
@@ -177,13 +177,14 @@
     "total": "Total",
     "continue": "Continue to payment",
     "payTitle": "Payment",
+    "demoNote": "Demo mode: use test card 4242 4242 4242 4242, any future date, any CVC.",
     "pay": "Pay {amount}",
     "processing": "Processing…",
     "error": "Something went wrong. Please try again.",
     "confirmedTitle": "Booking confirmed!",
     "confirmedText": "Thank you. Your booking is confirmed.",
     "pendingTitle": "Payment received",
-    "pendingText": "We're confirming your booking — you'll get an email shortly.",
+    "pendingText": "We're confirming your booking. You'll get an email shortly.",
     "reference": "Reference",
     "backHome": "Back to home"
   },
@@ -191,9 +192,9 @@
     "about": {
       "title": "About AutoRent",
       "lead": "Locally owned car rental based in Prishtina, built for travellers and locals who want a car without the hassle.",
-      "p1": "AutoRent started with a simple idea: renting a car should be as easy as booking a hotel room. Pick your dates, pay online, and collect the keys at our branch — no paperwork surprises, no hidden fees.",
+      "p1": "AutoRent started with a simple idea: renting a car should be as easy as booking a hotel room. Pick your dates, pay online, and collect the keys at our branch, with no paperwork surprises and no hidden fees.",
       "p2": "We keep a carefully maintained fleet, from city hatchbacks to family SUVs and vans. Every car is serviced on schedule, fully insured, and cleaned before each rental.",
-      "p3": "Because we operate from a single location in Prishtina, we know every car we hand over — and we're here in person if you need anything during your trip.",
+      "p3": "Because we operate from a single location in Prishtina, we know every car we hand over, and we're here in person if you need anything during your trip.",
       "kicker": "About us",
       "storyTitle": "Our story",
       "statCarsLabel": "cars in the fleet",
@@ -204,7 +205,7 @@
       "value1Title": "Reliability",
       "value1Text": "Every car is serviced on schedule and ready when you are.",
       "value2Title": "Transparency",
-      "value2Text": "Clear, upfront pricing — no hidden fees, ever.",
+      "value2Text": "Clear, upfront pricing with no hidden fees, ever.",
       "value3Title": "Real service",
       "value3Text": "A local team you can reach in person, before and during your trip.",
       "locationTitle": "Visit our branch",
@@ -215,13 +216,13 @@
     },
     "contact": {
       "title": "Contact us",
-      "lead": "Questions about a booking or the fleet? Reach out — we usually reply within a few hours.",
+      "lead": "Questions about a booking or the fleet? Reach out and we'll usually reply within a few hours.",
       "addressLabel": "Branch",
       "address": "Rr. Nëna Terezë 42, 10000 Prishtina, Kosovo",
       "phoneLabel": "Phone",
-      "phone": "+383 44 000 000",
+      "phone": "+383 49 765 432",
       "emailLabel": "Email",
-      "email": "hello@autorent.example",
+      "email": "info@autorent-ks.com",
       "hoursLabel": "Opening hours",
       "hours": "Every day, 08:00 – 20:00",
       "kicker": "Contact",
@@ -232,12 +233,12 @@
       "lead": "Everything you need to know before you book.",
       "kicker": "FAQ",
       "stillTitle": "Still have questions?",
-      "stillText": "We're happy to help — reach out any time.",
+      "stillText": "We're happy to help, so reach out any time.",
       "stillCta": "Contact us",
       "items": [
         { "q": "How do I book a car?", "a": "Choose your car and dates, add any extras, and pay securely online. Your booking is confirmed the moment payment goes through." },
         { "q": "When do I pay?", "a": "You pay in full online at the time of booking. There's nothing to pay at pick-up unless you add extras later." },
-        { "q": "Can I cancel or change my booking?", "a": "Yes. Cancel at least 48 hours before pick-up for a full refund. Cancellations after that receive a 50% refund." },
+        { "q": "Can I cancel or change my booking?", "a": "Yes. Cancel at least 48 hours before pick-up for a full refund. Cancellations after that receive a 50% refund, and no-shows are non-refundable." },
         { "q": "What do I need at pick-up?", "a": "A valid driving licence, an ID or passport, and the card used for the booking. The driver must match the booking details." },
         { "q": "Is there a deposit?", "a": "Some cars require a refundable security deposit, shown on the car's page. It's released after the car is returned in good condition." },
         { "q": "Where do I collect the car?", "a": "From our branch in Prishtina. The exact address and directions are in your confirmation email." }
@@ -252,9 +253,18 @@
         { "h": "3. Cancellations and refunds", "b": "Cancellations made at least 48 hours before the pick-up time receive a full refund. Later cancellations receive a 50% refund. No-shows are non-refundable." },
         { "h": "4. Use of the vehicle", "b": "Vehicles must be used lawfully and returned in the condition they were provided, with the same fuel level. The renter is responsible for fines and tolls incurred during the rental." },
         { "h": "5. Insurance and deposit", "b": "All vehicles include basic insurance. A refundable deposit may apply and is released after the vehicle is returned undamaged." },
-        { "h": "6. Liability", "b": "AutoRent is not liable for personal belongings left in the vehicle or for delays caused by circumstances beyond our control." }
+        { "h": "6. Liability", "b": "AutoRent is not liable for personal belongings left in the vehicle or for delays caused by circumstances beyond our control." },
+        { "h": "7. Accidents and breakdowns", "b": "In the event of an accident or breakdown, contact us immediately and, where required by law, the police. Do not admit liability at the scene. We will arrange assistance or a replacement vehicle where possible." },
+        { "h": "8. Damage and deposit", "b": "The vehicle is inspected together with the renter at pick-up and drop-off. Any damage beyond normal wear is assessed on return and may be charged against the refundable deposit; the remainder of the deposit is released within a few business days." }
       ]
     }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or may have moved.",
+    "home": "Back home",
+    "fleet": "Browse the fleet"
   },
   "footer": {
     "tagline": "The easiest way to rent a car.",
