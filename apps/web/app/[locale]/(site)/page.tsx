@@ -1,16 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import {
-  ArrowRight,
-  Search,
-  ShieldCheck,
-  Zap,
-  CalendarClock,
-  MapPin,
-  Check,
-  CreditCard,
-  KeyRound,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Search, ShieldCheck, Zap, CalendarClock, MapPin, Check, Star } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getFeaturedVehicles } from "@/lib/queries/vehicles";
 import { prisma } from "@/lib/db";
@@ -50,9 +39,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { icon: MapPin, title: t("whyLocalTitle"), text: t("whyLocalText") },
   ];
   const steps = [
-    { icon: Search, title: t("step1Title"), text: t("step1Text") },
-    { icon: CreditCard, title: t("step2Title"), text: t("step2Text") },
-    { icon: KeyRound, title: t("step3Title"), text: t("step3Text") },
+    { title: t("step1Title"), text: t("step1Text") },
+    { title: t("step2Title"), text: t("step2Text") },
+    { title: t("step3Title"), text: t("step3Text") },
   ];
 
   return (
@@ -128,11 +117,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {why.map(({ icon: Icon, title, text }) => (
-            <div
-              key={title}
-              className="group rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-primary/50"
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+            <div key={title} className="rounded-2xl border border-border bg-surface p-5">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 font-semibold">{title}</h3>
@@ -172,14 +158,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{t("stepsTitle")}</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          {steps.map(({ icon: Icon, title, text }, i) => (
+          {steps.map(({ title, text }, i) => (
             <div key={title} className="rounded-2xl border border-border bg-surface p-6">
-              <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-                  {i + 1}
-                </span>
-                <Icon className="h-5 w-5 text-primary" />
-              </div>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                {i + 1}
+              </span>
               <h3 className="mt-4 font-semibold">{title}</h3>
               <p className="mt-1 text-sm text-muted">{text}</p>
             </div>

@@ -104,11 +104,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{t("valuesTitle")}</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {values.map(({ icon: Icon, title, text }) => (
-            <div
-              key={title}
-              className="group rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/50"
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+            <div key={title} className="rounded-2xl border border-border bg-surface p-6">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 font-semibold">{title}</h3>
