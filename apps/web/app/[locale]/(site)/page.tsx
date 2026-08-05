@@ -58,8 +58,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         />
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:py-32">
           <div className="animate-fade-up">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            <p className="mb-4 inline-flex items-center rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary backdrop-blur">
               Prishtina &middot; Kosovo
             </p>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">{t("heroTitle")}</h1>
