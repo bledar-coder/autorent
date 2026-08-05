@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Ballina",
-    "fleet": "Flota",
+    "fleet": "Makinat",
     "about": "Rreth nesh",
     "contact": "Kontakt",
     "faq": "Pyetje",
@@ -25,7 +25,7 @@
     "heroSubtitle": "Rezervo online, paguaj në çast dhe merr çelësat në degën tonë.",
     "searchCta": "Kontrollo disponueshmërinë",
     "featured": "Makina të zgjedhura",
-    "viewFleet": "Shiko flotën",
+    "viewFleet": "Shiko makinat",
     "viewAll": "Shiko të gjitha makinat",
     "trustInstant": "Konfirmim i menjëhershëm",
     "trustCancel": "Anulim falas 48h para",
@@ -49,8 +49,8 @@
     "step3Text": "Merrni çelësat në degën tonë në Prishtinë dhe nisuni.",
     "reviewsTitle": "Çfarë thonë shoferët tanë",
     "ctaTitle": "Gati për rrugë?",
-    "ctaText": "Shfletoni flotën dhe rezervoni makinën tuaj për pak minuta.",
-    "ctaButton": "Shfleto flotën"
+    "ctaText": "Shfletoni makinat dhe rezervoni veturën tuaj për pak minuta.",
+    "ctaButton": "Shfleto makinat"
   },
   "availability": {
     "title": "Kontrollo disponueshmërinë",
@@ -70,7 +70,7 @@
     "empty": "Nuk ka makina për të shfaqur."
   },
   "fleet": {
-    "title": "Flota jonë",
+    "title": "Makinat tona",
     "subtitle": "Zgjidh makinën dhe kontrollo disponueshmërinë për datat e tua.",
     "resultsOne": "{count} makinë",
     "resultsOther": "{count} makina",
@@ -99,7 +99,7 @@
     "specs": "Specifikimet",
     "reviews": "Vlerësime",
     "noReviews": "Ende s'ka vlerësime.",
-    "backToFleet": "Kthehu te flota",
+    "backToFleet": "Kthehu te makinat",
     "unavailable": "Momentalisht e padisponueshme"
   },
   "auth": {
@@ -120,7 +120,7 @@
   "account": {
     "title": "Rezervimet e mia",
     "empty": "Ende s'ke rezervime.",
-    "browse": "Shfleto flotën",
+    "browse": "Shfleto makinat",
     "cancel": "Anulo rezervimin",
     "cancelConfirm": "Anulo këtë rezervim?",
     "total": "Totali",
@@ -193,11 +193,11 @@
       "title": "Rreth AutoRent",
       "lead": "Kompani vendore për dhënie veturash me qira në Prishtinë, e ndërtuar për udhëtarë dhe vendas që duan një veturë pa telashe.",
       "p1": "AutoRent filloi me një ide të thjeshtë: marrja e një veture me qira duhet të jetë aq e lehtë sa rezervimi i një dhome hoteli. Zgjidhni datat, paguani online dhe merrni çelësat në degën tonë, pa surpriza me dokumente dhe pa tarifa të fshehta.",
-      "p2": "Mbajmë një flotë të mirëmbajtur me kujdes, nga veturat e qytetit te SUV-të familjare dhe furgonat. Çdo veturë servisohet me kohë, është plotësisht e siguruar dhe pastrohet para çdo qiraje.",
+      "p2": "Mbajmë makina të mirëmbajtura me kujdes, nga veturat e qytetit te SUV-të familjare dhe furgonat. Çdo veturë servisohet me kohë, është plotësisht e siguruar dhe pastrohet para çdo qiraje.",
       "p3": "Meqë operojmë nga një vendndodhje e vetme në Prishtinë, e njohim çdo veturë që japim, dhe jemi këtu personalisht nëse ju duhet diçka gjatë udhëtimit.",
       "kicker": "Rreth nesh",
       "storyTitle": "Historia jonë",
-      "statCarsLabel": "makina në flotë",
+      "statCarsLabel": "makina në dispozicion",
       "statBranchLabel": "degë në Prishtinë",
       "statRatingLabel": "vlerësim mesatar",
       "statOnlineLabel": "rezervim online",
@@ -212,12 +212,12 @@
       "locationTitle": "Vizitoni degën tonë",
       "locationText": "Operojmë nga një vendndodhje e vetme në zemër të Prishtinës, kështu që marrja është e shpejtë dhe personale.",
       "ctaTitle": "Gati për të vozitur?",
-      "ctaText": "Shfletoni flotën dhe rezervoni makinën tuaj për pak minuta.",
-      "ctaButton": "Shfleto flotën"
+      "ctaText": "Shfletoni makinat dhe rezervoni veturën tuaj për pak minuta.",
+      "ctaButton": "Shfleto makinat"
     },
     "contact": {
       "title": "Na kontaktoni",
-      "lead": "Pyetje për një rezervim apo për flotën? Na shkruani dhe zakonisht përgjigjemi brenda pak orësh.",
+      "lead": "Pyetje për një rezervim apo për makinat? Na shkruani dhe zakonisht përgjigjemi brenda pak orësh.",
       "addressLabel": "Dega",
       "address": "Rr. Nëna Terezë 42, 10000 Prishtinë, Kosovë",
       "phoneLabel": "Telefoni",
@@ -294,7 +294,7 @@
     "title": "Faqja nuk u gjet",
     "text": "Faqja që kërkoni nuk ekziston ose mund të jetë zhvendosur.",
     "home": "Kthehu në ballinë",
-    "fleet": "Shfleto flotën"
+    "fleet": "Shfleto makinat"
   },
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
