@@ -3,7 +3,19 @@ import { prisma } from "@/lib/db";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://autorent-ks.vercel.app";
 const LOCALES = ["sq", "en"];
-const PAGES = ["", "/fleet", "/availability", "/about", "/contact", "/faq", "/terms", "/login", "/register"];
+const PAGES = [
+  "",
+  "/fleet",
+  "/availability",
+  "/about",
+  "/contact",
+  "/faq",
+  "/terms",
+  "/refund",
+  "/privacy",
+  "/login",
+  "/register",
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let slugs: string[] = [];

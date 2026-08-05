@@ -264,6 +264,29 @@
         { "h": "7. Aksidentet dhe defektet", "b": "Në rast aksidenti ose defekti, na kontaktoni menjëherë dhe, kur kërkohet me ligj, policinë. Mos pranoni përgjegjësi në vendngjarje. Ne do të organizojmë ndihmë ose një veturë zëvendësuese kur është e mundur." },
         { "h": "8. Dëmet dhe depozita", "b": "Vetura inspektohet së bashku me qiramarrësin gjatë marrjes dhe dorëzimit. Çdo dëm përtej konsumimit normal vlerësohet në kthim dhe mund të zbritet nga depozita e kthyeshme; pjesa e mbetur e depozitës lirohet brenda pak ditësh pune." }
       ]
+    },
+    "privacy": {
+      "title": "Politika e Privatësisë",
+      "updated": "Përditësuar së fundi: korrik 2026",
+      "sections": [
+        { "h": "1. Çfarë mbledhim", "b": "Kur rezervoni, mbledhim emrin, email-in, numrin e telefonit, datat e qirasë dhe detajet e rezervimit. Të dhënat e kartës së pagesës trajtohen drejtpërdrejt nga procesori ynë i pagesave, Stripe, dhe nuk ruhen kurrë në serverët tanë." },
+        { "h": "2. Si i përdorim", "b": "Përdorim informacionin tuaj për të procesuar rezervimet dhe pagesat, për të konfirmuar dhe menaxhuar qiranë, për të ofruar mbështetje dhe për të dërguar njoftime lidhur me rezervimin." },
+        { "h": "3. Pagesat", "b": "Pagesat procesohen nga Stripe, Inc. Detajet e kartës suaj transmetohen në mënyrë të sigurt te Stripe dhe i nënshtrohen politikës së privatësisë së Stripe. Ne marrim vetëm një konfirmim pagese dhe një referencë." },
+        { "h": "4. Ndarja", "b": "Ne nuk i shesim të dhënat tuaja personale. I ndajmë vetëm me ofruesit e shërbimeve të nevojshme për të operuar qiranë (si Stripe për pagesat) dhe kur kërkohet me ligj." },
+        { "h": "5. Ruajtja", "b": "I mbajmë të dhënat e rezervimit për aq kohë sa nevojitet për të ofruar shërbimin dhe për të përmbushur detyrimet ligjore dhe të kontabilitetit." },
+        { "h": "6. Të drejtat tuaja", "b": "Mund të kërkoni qasje, korrigjim ose fshirje të të dhënave tuaja personale duke na kontaktuar në email-in në faqen e Kontaktit." }
+      ]
+    },
+    "refund": {
+      "title": "Politika e Rimbursimit",
+      "updated": "Përditësuar së fundi: korrik 2026",
+      "sections": [
+        { "h": "Rimbursim i plotë", "b": "Anuloni së paku 48 orë para kohës së planifikuar të marrjes dhe merrni rimbursim të plotë të shumës së paguar." },
+        { "h": "Rimbursim i pjesshëm", "b": "Anulimet e bëra më pak se 48 orë para marrjes marrin 50% rimbursim të shumës së paguar." },
+        { "h": "Mosparaqitjet", "b": "Nëse nuk e merrni veturën dhe nuk anuloni, rezervimi nuk rimbursohet." },
+        { "h": "Si bëhen rimbursimet", "b": "Rimbursimet e aprovuara kthehen në kartën origjinale të pagesës përmes Stripe dhe zakonisht shfaqen brenda 5 deri 10 ditësh pune, varësisht nga banka juaj." },
+        { "h": "Depozitat", "b": "Çdo depozitë e kthyeshme sigurie lirohet pasi vetura kthehet pa dëme, veçmas nga rimbursimi i qirasë më lart." }
+      ]
     }
   },
   "notFound": {
@@ -276,6 +299,8 @@
   "footer": {
     "tagline": "Mënyra më e lehtë për të marrë makinë me qira.",
     "rights": "Të gjitha të drejtat e rezervuara.",
-    "terms": "Kushtet"
+    "terms": "Kushtet",
+    "refund": "Politika e Rimbursimit",
+    "privacy": "Politika e Privatësisë"
   }
 }

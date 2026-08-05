@@ -107,18 +107,7 @@ export function BookingForm({
 
   if (clientSecret) {
     return (
-      <Elements
-        stripe={stripePromise}
-        options={{
-          clientSecret,
-          appearance: {
-            theme:
-              typeof document !== "undefined" && document.documentElement.classList.contains("dark")
-                ? "night"
-                : "stripe",
-          },
-        }}
-      >
+      <Elements stripe={stripePromise} options={{ clientSecret, appearance: { theme: "night" } }}>
         <PaymentStep
           amountLabel={breakdown ? formatPrice(breakdown.totalCents, locale) : ""}
           locale={locale}
@@ -232,6 +221,12 @@ function PaymentStep({ amountLabel, locale }: { amountLabel: string; locale: str
   const [paying, setPaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Show the test-card note only in demo/test mode; it auto-hides once a live
+  // Stripe key is used (or when NEXT_PUBLIC_DEMO_MODE is explicitly "false").
+  const demoMode =
+    process.env.NEXT_PUBLIC_DEMO_MODE !== "false" &&
+    !(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "").startsWith("pk_live");
+
   async function pay(e: FormEvent) {
     e.preventDefault();
     if (!stripe || !elements) return;
@@ -250,9 +245,11 @@ function PaymentStep({ amountLabel, locale }: { amountLabel: string; locale: str
   return (
     <form onSubmit={pay} className="mx-auto max-w-md space-y-5">
       <h2 className="text-lg font-semibold">{t("payTitle")}</h2>
-      <p className="rounded-md border border-warning/30 bg-warning/10 px-3 py-2 text-xs text-warning">
-        {t("demoNote")}
-      </p>
+      {demoMode ? (
+        <p className="rounded-md border border-warning/30 bg-warning/10 px-3 py-2 text-xs text-warning">
+          {t("demoNote")}
+        </p>
+      ) : null}
       <PaymentElement />
       {error && <p className="text-sm text-destructive">{error}</p>}
       <button

@@ -264,6 +264,29 @@
         { "h": "7. Accidents and breakdowns", "b": "In the event of an accident or breakdown, contact us immediately and, where required by law, the police. Do not admit liability at the scene. We will arrange assistance or a replacement vehicle where possible." },
         { "h": "8. Damage and deposit", "b": "The vehicle is inspected together with the renter at pick-up and drop-off. Any damage beyond normal wear is assessed on return and may be charged against the refundable deposit; the remainder of the deposit is released within a few business days." }
       ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        { "h": "1. What we collect", "b": "When you book, we collect your name, email, phone number, rental dates, and booking details. Payment card data is handled directly by our payment processor, Stripe, and is never stored on our servers." },
+        { "h": "2. How we use it", "b": "We use your information to process bookings and payments, confirm and manage your rental, provide customer support, and send booking-related notifications." },
+        { "h": "3. Payments", "b": "Payments are processed by Stripe, Inc. Your card details are transmitted securely to Stripe and are subject to Stripe's privacy policy. We receive only a payment confirmation and a token reference." },
+        { "h": "4. Sharing", "b": "We do not sell your personal data. We share it only with service providers needed to operate the rental (such as Stripe for payments) and where required by law." },
+        { "h": "5. Retention", "b": "We keep booking records for as long as needed to provide the service and to meet our legal and accounting obligations." },
+        { "h": "6. Your rights", "b": "You may request access to, correction of, or deletion of your personal data by contacting us at the email on our Contact page." }
+      ]
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        { "h": "Full refund", "b": "Cancel at least 48 hours before the scheduled pick-up time and you receive a full refund of the amount paid." },
+        { "h": "Partial refund", "b": "Cancellations made less than 48 hours before pick-up receive a 50% refund of the amount paid." },
+        { "h": "No-shows", "b": "If you do not collect the vehicle and do not cancel, the booking is non-refundable." },
+        { "h": "How refunds are issued", "b": "Approved refunds are returned to the original payment card via Stripe and typically appear within 5 to 10 business days, depending on your bank." },
+        { "h": "Deposits", "b": "Any refundable security deposit is released after the vehicle is returned undamaged, separately from the rental refund above." }
+      ]
     }
   },
   "notFound": {
@@ -276,6 +299,8 @@
   "footer": {
     "tagline": "The easiest way to rent a car.",
     "rights": "All rights reserved.",
-    "terms": "Terms"
+    "terms": "Terms",
+    "refund": "Refund Policy",
+    "privacy": "Privacy Policy"
   }
 }

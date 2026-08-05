@@ -5,7 +5,6 @@ import { LanguageSwitcher } from "./language-switcher";
 import { AuthMenu } from "./auth-menu";
 import { NotificationBell } from "./notification-bell";
 import { NavAccountLink } from "./nav-account-link";
-import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
   { href: "/", key: "home" },
@@ -45,7 +44,6 @@ export async function SiteHeader() {
 
         <div className="flex items-center gap-3 sm:gap-4">
           <LanguageSwitcher />
-          <ThemeToggle />
           <NotificationBell />
           <AuthMenu />
         </div>

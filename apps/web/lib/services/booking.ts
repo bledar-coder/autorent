@@ -136,7 +136,9 @@ export async function createBooking(
         amount: booking.totalCents,
         currency: "eur",
         metadata: { bookingId: booking.id, reference: booking.reference },
-        automatic_payment_methods: { enabled: true },
+        // Card only (Apple/Google Pay ride on card). Avoids EU-specific methods
+        // like Bancontact/MB WAY/Satispay/EPS that don't apply to Kosovo.
+        payment_method_types: ["card"],
       },
       { idempotencyKey: `booking_${booking.id}` },
     );

@@ -8,6 +8,8 @@ const LINKS = [
   { href: "/contact", ns: "nav", key: "contact" },
   { href: "/faq", ns: "nav", key: "faq" },
   { href: "/terms", ns: "footer", key: "terms" },
+  { href: "/refund", ns: "footer", key: "refund" },
+  { href: "/privacy", ns: "footer", key: "privacy" },
 ] as const;
 
 export async function SiteFooter() {
